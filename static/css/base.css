@@ -1,0 +1,22 @@
+/* ============ Site Wide Styles ============ */
+
+
+/* CSS Variables */
+:root {
+    /* Typography */
+
+
+    /* Core colours */
+    --colour-dark: black;
+    --colour-light: white;
+
+    /* Accent colours */
+    --primary-accent: orange;
+    --secondary-accent: yellow;
+}
+
+/* Global Styles */
+
+body {
+    color: var(--primary-accent);
+}
