@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'vinylvault.urls'
+ROOT_URLCONF = 'vinyl_vault.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +81,10 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-WSGI_APPLICATION = 'vinylvault.wsgi.application'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+WSGI_APPLICATION = 'vinyl_vault.wsgi.application'
 
 
 # Database
