@@ -133,5 +133,30 @@
     {% block postloadjs %}
     {% endblock %}
     
+    <footer class="mt-auto py-4 bg-dark footer-top-border">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <!-- Footer Links -->
+                <div class="d-flex">
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'account_logout' %}" class="footer-text footer-link-spacing">Logout</a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="footer-text footer-link-spacing">Login</a>
+                    {% endif %}
+                    <a href="" class="footer-text footer-link-spacing">Contact</a>
+                    <a href="" class="footer-text">About</a>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="d-flex mt-4 mt-md-0">
+                    <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X" class="footer-icon footer-icon-spacing"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-icon footer-icon-spacing"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="footer-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="mt-4 small text-center text-white-50">© 2026 Vinyl Vault</div>
+        </div>
+    </footer>
+
   </body>
 </html>
