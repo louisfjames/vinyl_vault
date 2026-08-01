@@ -21,10 +21,35 @@ body {
 }
 
 /* Navbar */
+
+
+/* Rolling sale banner */
 .sale-banner {
     background-color: var(--primary-accent);
+    padding: 0.75rem 0;
 }
 
+.ticker-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker-text {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    animation: ticker-scroll 15s linear infinite;
+    padding-left: 100%;
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 /* Footer */
 
