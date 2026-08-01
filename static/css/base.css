@@ -11,12 +11,17 @@
     --colour-light: white;
 
     /* Accent colours */
-    --primary-accent: orange;
+    --primary-accent: rgb(255, 85, 0);
     --secondary-accent: yellow;
 }
 
 /* Global Styles */
-
 body {
     color: var(--primary-accent);
 }
+
+/* Navbar */
+.sale-banner {
+    background-color: var(--primary-accent);
+}
+

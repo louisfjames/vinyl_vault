@@ -34,7 +34,91 @@
     <title>Vinyl Vault {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+
+        <!-- Top section: Logo, search bar, account and cart -->
+        <div class="row bg-dark pt-lg-2">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <a href="{% url 'home' %}" class="nav-link"><h2 class="text-white">Vinyl Vault</h2></a>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="" class="d-flex align-items-center border border-white bg-transparent">
+                    <button class="btn btn-link text-white px-2" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input class="form-control form-control-sm border-0 bg-transparent text-white shadow-none" type="text" name="q" placeholder="Find your next record... ">
+                </form>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                <li class="list-inline-item dropdown">
+                <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="far fa-user-circle fa-lg"></i></div>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Store Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Account</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-white nav-link" href="">
+                        <div class="text-center">
+                            <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Middle section: main navigaton options -->
+        <div class="row bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item mx-3">
+                    <a class="nav-link font-weight-bold text-dark" href="#">Browse</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link font-weight-bold text-dark" href="#">New Releases</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link font-weight-bold text-dark" href="#">Sale</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link font-weight-bold text-dark" href="#">Contact</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link font-weight-bold text-dark" href="#">About</a>
+                </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+
+        <!-- Bottom section: sales banner -->
+        <div class="row text-center">
+            <div class="col text-white sale-banner">
+                <h3 class="my-1">Sale discount offer here</h3>
+            </div>
+        </div>
+    </header>
+
 
     {% if messages %}
         <div class="message-container"></div>
