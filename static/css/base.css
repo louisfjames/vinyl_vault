@@ -21,7 +21,14 @@ body {
 }
 
 /* Navbar */
+.navbar-icon {
+    color: var(--colour-light);
+    font-size: 1.3rem;
+}
 
+.navbar-icon:hover {
+    color: var(--primary-accent);
+}
 
 /* Rolling sale banner */
 .sale-banner {
