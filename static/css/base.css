@@ -1,17 +1,16 @@
 /* ============ Site Wide Styles ============ */
 
-
 /* CSS Variables */
 :root {
     /* Typography */
 
 
     /* Core colours */
-    --colour-dark: black;
-    --colour-light: white;
+    --colour-dark: rgb(10, 11, 19);
+    --colour-light: rgb(236, 236, 225);
 
     /* Accent colours */
-    --primary-accent: rgb(255, 85, 0);
+    --primary-accent: rgb(225, 101, 40);
     --secondary-accent: yellow;
 }
 
@@ -86,3 +85,6 @@ body {
 .footer-icon-spacing {
     margin-right: 8rem;
 }
+
+
+/* ============ Media Queries ============ */
