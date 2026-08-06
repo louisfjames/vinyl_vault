@@ -4,8 +4,16 @@
 
 {% block content %}
 <div>
-    <h2 class="display-6">Latest Releases</h2>
-    <p>Carousel of latest albums</p>
+    <h2>Latest Releases</h2>
+        <div class="row">
+            {% for album in latest_releases %}
+            <div class="col-6 col-md-3 mb-4">
+                <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="img-fluid">
+                <p class="mb-0">{{ album.title }}</p>
+                <p class="text-muted">{{ album.artist.name }}</p>
+            </div>
+            {% endfor %}
+        </div>
 
     <h2 class="display-6">Featured Album</h2>
     <p>Album cover, description and link for featured album</p>
