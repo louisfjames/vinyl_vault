@@ -8,7 +8,7 @@ def index(request):
     album_data = Album.objects.all().order_by('-release_date')
 
     context = {
-           'latest_releases': album_data[:5],
+           'latest_releases': album_data[:4],
            'featured_album': album_data.first(),
            'sale_items': album_data.filter(is_on_sale=True)[:4],
        }

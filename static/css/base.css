@@ -6,11 +6,11 @@
 
 
     /* Core colours */
-    --colour-dark: rgb(10, 11, 19);
-    --colour-light: rgb(236, 236, 225);
+    --colour-dark: rgb(12, 13, 24);
+    --colour-light: white;
 
     /* Accent colours */
-    --primary-accent: rgb(225, 101, 40);
+    --primary-accent: rgb(248, 100, 74);
     --secondary-accent: yellow;
 }
 
