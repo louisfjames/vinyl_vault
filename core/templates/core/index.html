@@ -3,38 +3,58 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h2>Latest Releases</h2>
-        <div class="row">
-            {% for album in latest_releases %}
-            <div class="col-6 col-md-3 mb-4">
-                <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="img-fluid">
-                <p class="mb-0">{{ album.title }}</p>
-                <p class="text-muted">{{ album.artist.name }}</p>
-            </div>
-            {% endfor %}
-        </div>
+<div class="container my-5">
 
-    <h2 class="display-6">Featured Album</h2>
-        {% if featured_album %}
-        <div class="row">
-            <div class="col-md-4">
-                <img src="{{ featured_album.cover_image_url }}" alt="{{ featured_album.title }}" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h3>{{ featured_album.title }}</h3>
-                <p class="text-muted">{{ featured_album.artist }}</p>
-                <p>{{ featured_album.description }}</p>
-                <a href="#" class="btn btn-dark">View Album</a>
+    <section class="latest-releases mb-5">
+        <div class="container">
+            <h2>Latest Releases</h2>
+            <div class="row">
+                {% for album in latest_releases %}
+                <div class="col- col-md-3 mb-4">
+                    <div class="border-0">
+                        <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="img-fluid">
+                        <div class="card-body px-0">
+                            <p class="mb-0">{{ album.title }}</p>
+                            <p class="text-muted">{{ album.artist }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
-        {% else %}
-        <p>No featured album selected.</p>
-        {% endif %}
+    </section>
 
-    <h2 class="display-6">Sale</h2>
-    <p>Table of four albums on sale</p>
+    <section class="featured-album mb-5">
+        <div class="container">
+            <h2 class="display-6">Featured Album</h2>
+            {% if featured_album %}
+            <div class="border rounded p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <img src="{{ featured_album.cover_image_url }}" alt="{{ featured_album.title }}" class="img-fluid w-100">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>{{ featured_album.title }}</h3>
+                        <p class="text-muted">{{ featured_album.artist }}</p>
+                        <p>{{ featured_album.description }}</p>
+                        <a href="#" class="btn btn-dark">View Album</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <p>No featured album selected.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="sale-items mb-5">
+        <div class="container">
+            <h2 class="display-6">Sale</h2>
+            <div class="row">
+                <p>Sale items to go here.</p>
+            </div>
+        </div>
+    </section>
+
 </div>
-    
-
 {% endblock %}
