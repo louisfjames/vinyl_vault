@@ -9,7 +9,7 @@ def index(request):
 
     context = {
            'latest_releases': album_data[:4],
-           'featured_album': album_data.first(),
+           'featured_album': album_data.filter(is_featured=True).first(),
            'sale_items': album_data.filter(is_on_sale=True)[:4],
        }
     return render(request, 'core/index.html', context)

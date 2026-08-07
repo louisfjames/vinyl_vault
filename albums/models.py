@@ -23,6 +23,7 @@ class Album(models.Model):
     tracklist = models.TextField(blank=True)
     deezer_id = models.IntegerField(blank=True, null=True) 
     created_at = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} — {self.artist}"
