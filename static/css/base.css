@@ -16,9 +16,12 @@
 
 /* Global Styles */
 body {
-    color: var(--primary-accent);
+    color: var(--colour-dark);
 }
 
+.headings {
+    color: var(--primary-accent);
+}
 /* Navbar */
 .navbar-icon {
     color: var(--colour-light);
