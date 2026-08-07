@@ -21,7 +21,9 @@ body {
 
 .headings {
     color: var(--primary-accent);
+    font-weight: bold;
 }
+
 /* Navbar */
 .navbar-icon {
     color: var(--colour-light);
@@ -58,6 +60,26 @@ body {
     100% {
         transform: translateX(-100%);
     }
+}
+
+/* Buttons */
+.custom-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 0;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--colour-light);
 }
 
 /* Footer */

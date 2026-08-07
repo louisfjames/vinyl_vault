@@ -18,7 +18,7 @@
                             <p class="mb-2">{{ album.artist }}</p>
                             <p class="font-weight-bold mb-0">£{{ album.price }}</p>
                             <p class="small mb-3">{{ album.get_format_display }}</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Add to Basket</a>
+                            <a href="#" class="btn custom-btn mt-auto">Add to Basket</a>
                         </div>
                     </div>
                 </div>
@@ -38,9 +38,9 @@
                     </div>
                     <div class="col-md-8">
                         <h3 class="headings">{{ featured_album.title }}</h3>
-                        <p class="text-muted">{{ featured_album.artist }}</p>
-                        <p>{{ featured_album.featured_reason }}</p>
-                        <a href="#" class="btn btn-dark">View Album</a>
+                        <p>{{ featured_album.artist }}</p>
+                        <p class="small mb-3">{{ featured_album.featured_reason }}</p>
+                        <a href="#" class="btn custom-btn">View Album</a>
                     </div>
                 </div>
             </div>
