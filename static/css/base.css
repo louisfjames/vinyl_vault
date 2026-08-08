@@ -141,4 +141,14 @@ body {
     white-space: pre-line;
 }
 
+.breadcrumb-item a {
+    color: var(--colour-dark);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-accent);
+    text-decoration: underline;
+}
+
 /* ============ Media Queries ============ */
