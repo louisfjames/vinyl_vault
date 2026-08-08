@@ -122,6 +122,10 @@ body {
 
 /* ============ Album Detail Page ============ */
 
+.album-detail-cover {
+    max-width: 500px;
+}
+
 .tracklist-text {
     white-space: pre-line;
 }
