@@ -110,6 +110,16 @@ body {
     margin-right: 8rem;
 }
 
+/* Links */
+.album-title-link {
+    text-decoration: none;
+}
+
+.album-title-link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-accent);
+}
+
 /* ============ Album Detail Page ============ */
 
 .tracklist-text {
