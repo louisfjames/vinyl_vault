@@ -83,7 +83,6 @@ body {
 }
 
 /* Footer */
-
 .footer-text {
     color: var(--colour-light);
     text-decoration: none;
@@ -109,6 +108,12 @@ body {
 
 .footer-icon-spacing {
     margin-right: 8rem;
+}
+
+/* ============ Album Detail Page ============ */
+
+.tracklist-text {
+    white-space: pre-line;
 }
 
 /* ============ Media Queries ============ */

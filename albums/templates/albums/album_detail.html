@@ -57,5 +57,51 @@
     
     </div>
 
+    <!-- Collapsible sections: Details, Delivery and Returns, Track Listing -->
+    <div class="row mt-4">
+        <div class="col-12">
+
+            <!-- Details: release date, format, genre, label -->
+            <div class="border-top py-3">
+                <a class="d-flex justify-content-between text-dark" data-toggle="collapse" href="#details">
+                    <span class="font-weight-bold">Details</span>
+                    <span>+</span>
+                </a>
+                <div class="collapse mt-3" id="details">
+                    <p class="mb-1"><strong>Released:</strong> {{ album.release_date }}</p>
+                    <p class="mb-1"><strong>Format:</strong> {{ album.get_format_display }}</p>
+                    <p class="mb-1"><strong>Genre:</strong> {{ album.genre }}</p>
+                    <p class="mb-1"><strong>Label:</strong> {{ album.label }}</p>
+                </div>
+            </div>
+
+            <!-- Track listing -->
+            <div class="border-top py-3">
+                <a class="d-flex justify-content-between text-dark" data-toggle="collapse" href="#tracklist">
+                    <span class="font-weight-bold">Track Listing</span>
+                    <span>+</span>
+                </a>
+                <div class="collapse mt-3" id="tracklist">
+                    <p class="tracklist-text">{{ album.tracklist }}</p>
+                </div>
+            </div>
+
+            <!-- Delivery and Returns -->
+            <div class="border-top border-bottom py-3">
+                <a class="d-flex justify-content-between text-dark" data-toggle="collapse" href="#delivery-returns">
+                    <span class="font-weight-bold">Delivery and Returns</span>
+                    <span>+</span>
+                </a>
+                <div class="collapse mt-3" id="delivery-returns">
+                    <p class="mb-1">Free UK delivery on orders over £25.</p>
+                    <p class="mb-1">Usually dispatched within 24 hours.</p>
+                    <p class="mb-0">Not quite right? Returns are accepted within 30 days of delivery, provided the item is unopened and in its original condition.</p>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
 </div>
 {% endblock %}
