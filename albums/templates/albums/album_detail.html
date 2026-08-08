@@ -14,24 +14,26 @@
     </nav>
 
     <div class="row">
+
+        <!-- Album cover -->
         <div class="col-md-5">
             <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="img-fluid">
         </div>
+
+        <!-- Album information: artist, title, price -->
         <div class="col-md-7">
+            <p class="mb-1 h4">{{ album.artist }}</p>
             <h1 class="headings">{{ album.title }}</h1>
-            <p>{{ album.artist }}</p>
-            <p class="text-muted mb-1">{{ album.get_format_display }}</p>
             {% if album.sale_price %}
             <p class="mb-3">
                 <del class="text-muted">£{{ album.price }}</del>
-                <span class="font-weight-bold">£{{ album.sale_price }}</span>
+                <span class="font-weight-bold h4 ml-2">£{{ album.sale_price }}</span>
             </p>
             {% else %}
-            <p class="font-weight-bold mb-3">£{{ album.price }}</p>
+            <p class="font-weight-bold h4 mb-3">£{{ album.price }}</p>
             {% endif %}
-            <p>{{ album.description }}</p>
-            <a href="#" class="btn custom-btn">Add to Basket</a>
         </div>
+
     </div>
 </div>
 {% endblock %}
