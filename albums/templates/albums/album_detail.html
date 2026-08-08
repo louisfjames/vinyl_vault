@@ -2,7 +2,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container my-4">
+
+    <!-- Breadcrumb navigation -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent px-0">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Browse</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
+        </ol>
+    </nav>
+
     <div class="row">
         <div class="col-md-5">
             <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="img-fluid">
@@ -10,7 +20,15 @@
         <div class="col-md-7">
             <h1 class="headings">{{ album.title }}</h1>
             <p>{{ album.artist }}</p>
-            <p class="font-weight-bold">£{{ album.price }}</p>
+            <p class="text-muted mb-1">{{ album.get_format_display }}</p>
+            {% if album.sale_price %}
+            <p class="mb-3">
+                <del class="text-muted">£{{ album.price }}</del>
+                <span class="font-weight-bold">£{{ album.sale_price }}</span>
+            </p>
+            {% else %}
+            <p class="font-weight-bold mb-3">£{{ album.price }}</p>
+            {% endif %}
             <p>{{ album.description }}</p>
             <a href="#" class="btn custom-btn">Add to Basket</a>
         </div>
