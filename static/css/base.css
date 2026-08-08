@@ -191,4 +191,16 @@ body {
     border-color: var(--primary-accent);
 }
 
+.login p:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login input[type="checkbox"] {
+    width: auto;
+    border: none;
+    padding: 0;
+}
+
 /* ============ Media Queries ============ */
