@@ -123,7 +123,7 @@ body {
 /* ============ Album Detail Page ============ */
 
 .album-detail-cover {
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .tracklist-text {
