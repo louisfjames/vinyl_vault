@@ -40,7 +40,7 @@
                         <h3 class="headings">{{ featured_album.title }}</h3>
                         <p>{{ featured_album.artist }}</p>
                         <p class="small mb-3">{{ featured_album.featured_reason }}</p>
-                        <a href="#" class="btn custom-btn">View Album</a>
+                        <a href="{% url 'albums:album_detail' featured_album.id %}" class="btn custom-btn">View Album</a>
                     </div>
                 </div>
             </div>
