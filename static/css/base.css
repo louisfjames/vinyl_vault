@@ -113,9 +113,11 @@ body {
 /* Links */
 .album-title-link {
     text-decoration: none;
+    color: inherit;
 }
 
 .album-title-link:hover {
+    color: var(--primary-accent);
     text-decoration: underline;
     text-decoration-color: var(--primary-accent);
 }
