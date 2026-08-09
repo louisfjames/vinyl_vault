@@ -203,4 +203,32 @@ body {
     padding: 0;
 }
 
+/* ============ Browse / New Releases / Sale Pages ============ */
+
+/* Pagination */
+.page-link {
+    color: var(--colour-dark);
+    border-radius: 0;
+    border-color: var(--colour-dark);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+
+.page-link:hover {
+    color: var(--colour-light);
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+
+.page-link:focus,
+.page-link:active {
+    box-shadow: none;
+    color: var(--colour-light);
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+
 /* ============ Media Queries ============ */
