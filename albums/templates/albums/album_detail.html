@@ -8,7 +8,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent px-0">
             <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Browse</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'albums:browse_albums' %}">Browse</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
         </ol>
     </nav>
