@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Album
+from django.core.paginator import Paginator
 
 def album_detail(request, album_id):
     """
