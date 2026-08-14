@@ -75,8 +75,8 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Navigation | Guest browsing | Store accessible without login | Browsed as guest | All public pages accessible | **PASS** |
 | Navigation | Footer links | Footer links open correct pages | Clicked each link | All links open correct pages | **PASS** |
 | Layout | Desktop layout | Layout stable on large screens | Tested on desktop | No layout issues | **PASS** |
-| Layout | Tablet layout | Layout adapts correctly | Tested at 768–991px | Minor spacing fix applied | |
-| Layout | Mobile layout | Layout adapts to small screens | Tested <768px | Layout clean and readable | |
+| Layout | Tablet layout | Layout adapts correctly | Tested at 768–991px | Minor spacing fix applied | **PASS** |
+| Layout | Mobile layout | Layout adapts to small screens | Tested <768px | Layout clean and readable | **PASS** |
 | Authentication | Signup form | Creates new user account | Submitted valid signup | Account created successfully | **PASS** |
 | Authentication | Signup validation | Shows errors for invalid input | Submitted empty/invalid fields | Clear validation errors shown | **PASS** |
 | Authentication | Email confirmation | Confirmation email sent | Registered new user | Email received | **PASS** |

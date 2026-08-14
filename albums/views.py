@@ -39,3 +39,4 @@ def browse_albums(request):
         'page_obj': page_obj,
     }
     return render(request, 'albums/browse.html', context)
+
