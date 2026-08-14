@@ -4,8 +4,6 @@
 {% block content %}
 <div class="container my-4">
 
-    <h2 class="headings mb-4">Browse</h2>
-
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent px-0">
@@ -14,6 +12,8 @@
         </ol>
     </nav>
     
+    <h2 class="headings mb-4">Browse</h2>
+
     <div class="row">
         {% for album in page_obj %}
         <div class="col-6 col-md-3 mb-4">
