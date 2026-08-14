@@ -6,12 +6,11 @@
 
 
     /* Core colours */
-    --colour-dark: rgb(12, 13, 24);
+    --colour-dark: rgb(27, 27, 33);
     --colour-light: white;
 
     /* Accent colours */
     --primary-accent: rgb(248, 100, 74);
-    --secondary-accent: yellow;
 }
 
 /* Global Styles */
@@ -25,6 +24,14 @@ body {
 }
 
 /* Navbar */
+.header-dark {
+    background-color: var(--colour-dark);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 .navbar-icon {
     color: var(--colour-light);
     font-size: 1.3rem;
@@ -32,6 +39,19 @@ body {
 
 .navbar-icon:hover {
     color: var(--primary-accent);
+}
+
+.nav-row {
+    background-color: var(--colour-light);
+}
+
+.nav-link {
+    color: var(--colour-dark);
+}
+
+.nav-link:hover {
+    color: var(--colour-dark);
+    text-decoration: underline;
 }
 
 /* Rolling sale banner */
@@ -232,3 +252,20 @@ body {
 }
 
 /* ============ Media Queries ============ */
+
+@media (max-width: 991px) {
+    .nav-row {
+        background-color: var(--colour-dark);
+    }
+
+    .nav-row .nav-link {
+        color: var(--colour-light) !important;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--colour-dark);
+    }
+
+    .nav-row .navbar-collapse.show,
+    .nav-row .navbar-collapse.collapsing {
+        padding: 0.5rem 1rem 1rem;
+    }
+}
