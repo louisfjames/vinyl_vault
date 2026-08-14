@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Album
 from django.core.paginator import Paginator
+from datetime import date, timedelta
 
 def album_detail(request, album_id):
     """
@@ -56,3 +57,25 @@ def sale_albums(request):
         'page_obj': page_obj,
     }
     return render(request, 'albums/sale.html', context)
+
+
+def new_releases(request):
+    """
+    Display a paginated grid of albums released within the last year
+    (16 per page, 4x4 grid), ordered by most recent release_date first.
+    Uses get_page() so an invalid/missing 'page' query param falls back
+    instead of erroring.
+    """
+    one_year_ago = date.today() - timedelta(days=365)
+    album_list = Album.objects.filter(
+        release_date__gte=one_year_ago
+    ).order_by('-release_date')
+
+    paginator = Paginator(album_list, 16)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+    }
+    return render(request, 'albums/new_releases.html', context)
