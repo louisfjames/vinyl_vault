@@ -27,7 +27,7 @@ def browse_albums(request):
     """
     Display a paginated grid of all albums (16 per page, 4x4 grid),
     ordered alphabetically by title. Uses get_page() so an
-    invalid/missing 'page' query param falls back gracefully instead
+    invalid/missing 'page' query param falls back instead
     of erroring.
     """
     album_list = Album.objects.all().order_by('title')
@@ -40,3 +40,19 @@ def browse_albums(request):
     }
     return render(request, 'albums/browse.html', context)
 
+
+def sale_albums(request):
+    """
+    Display a paginated grid of albums currently on sale (16 per page,
+    4x4 grid), ordered by title. Uses get_page() so an invalid/missing
+    'page' query param falls back instead of erroring.
+    """
+    album_list = Album.objects.filter(is_on_sale=True).order_by('title')
+    paginator = Paginator(album_list, 16)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+    }
+    return render(request, 'albums/sale.html', context)
