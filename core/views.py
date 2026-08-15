@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from albums.models import Album
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -13,3 +14,8 @@ def index(request):
            'sale_items': album_data.filter(is_on_sale=True)[:4],
        }
     return render(request, 'core/index.html', context)
+
+
+def about(request):
+    """ A view that returns the about page """
+    return render(request, 'about.html')
