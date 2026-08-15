@@ -79,3 +79,29 @@ def new_releases(request):
         'page_obj': page_obj,
     }
     return render(request, 'albums/new_releases.html', context)
+
+
+def album_search(request):
+    """
+    Render a paginated grid of albums matching a search query.
+
+    Retrieves the 'q' parameter from the request and filters Album
+    records by title using a case‑insensitive containment match.
+    The filtered queryset is ordered alphabetically and paginated
+    into 16‑item pages to maintain the same 4×4 layout used on the
+    main browse view. Uses get_page() to safely handle invalid or
+    missing 'page' parameters.
+    """
+    query = request.GET.get('q', '')
+
+    album_list = Album.objects.filter(title__icontains=query).order_by('title')
+
+    paginator = Paginator(album_list, 16)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+        'query': query,
+    }
+    return render(request, 'albums/browse.html', context)
