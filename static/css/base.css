@@ -251,6 +251,10 @@ body {
     border-color: var(--primary-accent);
 }
 
+
+/* ============ About Page ============ */
+
+
 /* ============ Media Queries ============ */
 
 @media (max-width: 991px) {

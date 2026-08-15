@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}About | Vinyl Vault{% endblock %}
 
@@ -13,10 +14,127 @@
     </div>
 
     <!-- Accordion -->
-    <div class="text-center mb-5">
-        <h2 class="headings">Frequently Asked Questions</h2>
-        <p class="lead">Everything you need to know about Vinyl Vault.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div id="faqAccordion">
+
+                <!-- FAQ 1 -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                Who is Vault Vinyl?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show"
+                        aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Vault Vinyl is an independent online retailer based in Bristol, specialising in curated records,
+                            limited-edition pressings, and collector-focused releases. Every album is hand-selected, graded,
+                            and photographed in-house to give buyers a clear, honest view of what they’re getting.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                How do you source the vinyl listed on Vault Vinyl?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse"
+                        aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            We source records from trusted suppliers, independent distributors, and select partners. Every
+                            title is inspected before being listed, and we only add albums that meet our standards for
+                            quality, authenticity, and pressing accuracy.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                Are your records new, used, or a mix of both?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseThree" class="collapse"
+                        aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Right now, Vault Vinyl stocks <strong>brand-new sealed records only</strong>. We’re actively
+                            working on expanding into pre-owned and collectible used vinyl in the near future, with proper
+                            grading and detailed condition notes once that section launches.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                Can I request a specific album or pressing you don’t currently stock?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseFour" class="collapse"
+                        aria-labelledby="headingFour" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Yes - if there’s a record you’re hunting for, you can send us a request. We’ll check our suppliers
+                            and networks to see if we can track it down, and we’ll let you know if it becomes available.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFive"
+                                    aria-expanded="false" aria-controls="collapseFive">
+                                What should I do if my record arrives warped, damaged, or skips?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseFive" class="collapse"
+                        aria-labelledby="headingFive" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            If your record arrives with any issues, contact us straight away. We’ll help troubleshoot the
+                            problem, and if the item is faulty or damaged in transit, we’ll arrange a replacement or refund
+                            depending on availability.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
+
 </div>
+
+
 {% endblock %}
