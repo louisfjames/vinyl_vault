@@ -104,4 +104,4 @@ def album_search(request):
         'page_obj': page_obj,
         'query': query,
     }
-    return render(request, 'albums/browse.html', context)
+    return render(request, 'albums/search_results.html', context)

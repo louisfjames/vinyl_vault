@@ -42,7 +42,7 @@
                 <a href="{% url 'home' %}" class="nav-link"><h2 class="text-white mb-0">Vinyl Vault</h2></a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-flex align-items-center">
-                <form method="GET" action="" class="d-flex align-items-center border border-white bg-transparent flex-grow-1">
+                <form method="GET" action="{% url 'albums:album_search' %}" class="d-flex align-items-center border border-white bg-transparent flex-grow-1">
                     <button class="btn btn-link text-white px-2" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
@@ -135,7 +135,7 @@
             </nav>
         </div>
 
-        <!-- Bottom section: sales banner -->
+        <!-- Bottom section = sales banner -->
         <div class="row text-center">
             <div class="col text-white sale-banner overflow-hidden">
                 <div class="ticker-wrapper">
