@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('core.urls')),
     path('albums/', include('albums.urls')),
 ]
+
+def custom_404(request, exception=None):
+    return render(request, '404.html', status=404)
+
+handler404 = 'vinyl_vault.urls.custom_404'

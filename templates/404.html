@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Page Not Found | Vinyl Vault{% endblock %}
+
+{% block content %}
+<div class="container text-center py-5">
+    <h1 class="display-4 fw-bold text-light">404</h1>
+    <h2>Page Not Found</h2>
+    <p class="lead">We couldn’t find this track on the album...</p>
+
+    <a href="{% url 'home' %}" class="btn custom-btn mt-3">Return Home</a>
+</div>
+{% endblock %}
