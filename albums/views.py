@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Album
 from django.core.paginator import Paginator
 from datetime import date, timedelta
+from django.db.models import Q
 
 def album_detail(request, album_id):
     """
@@ -86,22 +87,20 @@ def album_search(request):
     Render a paginated grid of albums matching a search query.
 
     Retrieves the 'q' parameter from the request and filters Album
-    records by title using a case‑insensitive containment match.
-    The filtered queryset is ordered alphabetically and paginated
-    into 16‑item pages to maintain the same 4×4 layout used on the
-    main browse view. Uses get_page() to safely handle invalid or
-    missing 'page' parameters.
+    records by title or artist using a case‑insensitive containment 
+    match. The filtered queryset is ordered alphabetically and 
+    paginated into 16‑item pages to maintain the same 4×4 layout 
+    used on the main browse view. Uses get_page() to safely handle 
+    invalid or missing 'page' parameters.
     """
     query = request.GET.get('q', '')
-
-    album_list = Album.objects.filter(title__icontains=query).order_by('title')
+    album_list = Album.objects.filter(
+        Q(title__icontains=query) | Q(artist__icontains=query)
+    ).order_by('title')
 
     paginator = Paginator(album_list, 16)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    context = {
-        'page_obj': page_obj,
-        'query': query,
-    }
+    context = {'page_obj': page_obj, 'query': query}
     return render(request, 'albums/search_results.html', context)
