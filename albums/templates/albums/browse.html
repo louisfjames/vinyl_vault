@@ -16,7 +16,19 @@
     
     <h2 class="headings mb-4">Browse</h2>
 
+    <!-- Sort dropdown -->
+    <form method="get" class="d-flex justify-content-end mb-3">
+        <select name="sort" class="form-select w-auto" onchange="this.form.submit()">
+            <option value="release_desc" {% if current_sort == 'release_desc' %}selected{% endif %}>Newest Releases</option>
+            <option value="release_asc" {% if current_sort == 'release_asc' %}selected{% endif %}>Oldest Releases</option>
+            <option value="az" {% if current_sort == 'az' %}selected{% endif %}>A–Z</option>
+            <option value="price_low" {% if current_sort == 'price_low' %}selected{% endif %}>Price: Low to High</option>
+            <option value="price_high" {% if current_sort == 'price_high' %}selected{% endif %}>Price: High to Low</option>
+        </select>
+    </form>
+
     <div class="row">
+        
         {% for album in page_obj %}
         <div class="col-6 col-md-3 mb-4">
             <div class="card h-100 border-0 shadow-sm">
