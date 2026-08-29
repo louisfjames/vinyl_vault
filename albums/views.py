@@ -28,17 +28,27 @@ def album_detail(request, album_id):
 def browse_albums(request):
     """
     Display a paginated grid of all albums (16 per page, 4x4 grid),
-    ordered alphabetically by title. Uses get_page() so an
-    invalid/missing 'page' query param falls back instead
-    of erroring.
+    sortable by release date, title (A-Z), or price.
+    Uses get_page() so an invalid/missing 'page' query param falls 
+    back instead of erroring.
     """
-    album_list = Album.objects.all().order_by('title')
+    sort = request.GET.get('sort', 'release_desc')
+    sort_options = {
+        'release_desc': '-release_date',
+        'release_asc': 'release_date',
+        'az': 'title',
+        'price_low': 'price',
+        'price_high': '-price',
+    }
+    album_list = Album.objects.all().order_by(sort_options.get(sort, '-release_date'))
+
     paginator = Paginator(album_list, 16)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     context = {
         'page_obj': page_obj,
+        'current_sort': sort,
     }
     return render(request, 'albums/browse.html', context)
 
