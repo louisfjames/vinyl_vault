@@ -42,18 +42,20 @@
             </div>
 
             <!-- Quantity selector + Add to Basket -->
-            <div class="d-flex align-items-stretch mb-4">
+            <form class="d-flex align-items-stretch mb-4" action="{% url 'bag:add_to_bag' album.id %}" method="POST">
+                {% csrf_token %}
                 <div class="input-group qty-group mr-3">
                     <div>
-                        <button class="btn custom-btn" type="button">-</button>
+                        <button class="btn custom-btn decrement-qty" type="button" data-item_id="{{ album.id }}">-</button>
                     </div>
-                    <input type="text" class="form-control text-center" value="1">
+                    <input type="number" name="quantity" class="form-control text-center qty_input" value="1" min="1" max="99" id="id_qty_{{ album.id }}">
                     <div>
-                        <button class="btn custom-btn" type="button">+</button>
+                        <button class="btn custom-btn increment-qty" type="button" data-item_id="{{ album.id }}">+</button>
                     </div>
                 </div>
-                <a href="#" class="btn custom-btn">Add to Basket</a>
-            </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <button type="submit" class="btn custom-btn">Add to Basket</button>
+            </form>
 
         </div>
     
