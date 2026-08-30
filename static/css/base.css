@@ -195,6 +195,10 @@ body {
     height: auto;
 }
 
+.qty-selector button:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
 /* ============ Authentication Pages ============ */
 
 .auth-link {
