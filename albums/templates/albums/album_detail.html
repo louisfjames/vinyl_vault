@@ -41,7 +41,7 @@
                 <p class="font-weight-bold mb-0">{{ album.get_format_display }}</p>
             </div>
 
-            <!-- Quantity selector + Add to Basket -->
+            <!-- Quantity selector + Add to Bag -->
             <form class="d-flex align-items-stretch mb-4" action="{% url 'bag:add_to_bag' album.id %}" method="POST">
                 {% csrf_token %}
                 <div class="input-group qty-group mr-3">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="btn custom-btn">Add to Basket</button>
+                <button type="submit" class="btn custom-btn">Add to Bag</button>
             </form>
 
         </div>
