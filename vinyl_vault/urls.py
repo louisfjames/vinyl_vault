@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('core.urls')),
     path('albums/', include('albums.urls')),
+    path('bag/', include('bag.urls')),
 ]
 
 def custom_404(request, exception=None):
