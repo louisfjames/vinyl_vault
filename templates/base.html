@@ -27,7 +27,7 @@
   <body>
     <header class="container-fluid sticky-top">
 
-        <!-- Top section = Logo, search bar + mobile burger toggle, account/cart (desktop only) -->
+        <!-- Top section = Logo, search bar + mobile burger toggle, account/bag (desktop only) -->
         <div class="row header-dark pt-lg-2">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link"><h2 class="text-white mb-0">Vinyl Vault</h2></a>
@@ -69,7 +69,7 @@
                     </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="text-white nav-link" href="">
+                        <a class="text-white nav-link" href="{% url 'bag:view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg navbar-icon"></i></div>
                             </div>
