@@ -185,6 +185,16 @@ body {
     text-decoration: underline;
 }
 
+.qty-selector {
+    max-width: 340px;
+}
+
+.qty-selector .qty_input {
+    padding-left: 0;
+    padding-right: 0;
+    height: auto;
+}
+
 /* ============ Authentication Pages ============ */
 
 .auth-link {
