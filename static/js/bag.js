@@ -25,3 +25,14 @@ document.querySelectorAll('.decrement-qty').forEach((button) => {
         }
     });
 });
+
+// Populate remove-confirmation modal with the clicked item's details
+document.querySelectorAll('.remove-item').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        const removeUrl = e.currentTarget.dataset.removeUrl;
+        const albumTitle = e.currentTarget.dataset.albumTitle;
+
+        document.getElementById('removeModalItemTitle').textContent = albumTitle;
+        document.getElementById('removeModalConfirmBtn').setAttribute('href', removeUrl);
+    });
+});

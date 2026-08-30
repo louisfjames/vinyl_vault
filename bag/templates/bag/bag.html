@@ -35,7 +35,7 @@
                 <p class="mb-1 font-weight-bold headings">{{ item.album.title }}</p>
             </a>
             <p class="mb-0 small">Unit price: £{{ item.price }}</p>
-            <a href="{% url 'bag:remove_from_bag' item.item_id %}" class="small text-danger">
+            <a href="#" class="small text-danger remove-item" data-toggle="modal" data-target="#removeModal" data-remove-url="{% url 'bag:remove_from_bag' item.item_id %}" data-album-title="{{ item.album.title }}">
                 <i class="fas fa-times-circle mr-1"></i>Remove
             </a>
         </div>
@@ -65,4 +65,31 @@
     {% endif %}
 
 </div>
+
+<!-- Remove confirmation modal -->
+<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeModalLabel">Remove item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Remove <strong id="removeModalItemTitle"></strong> from your bag?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="#" id="removeModalConfirmBtn" class="btn btn-danger">Remove</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'js/bag.js' %}"></script>
 {% endblock %}

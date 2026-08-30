@@ -10,7 +10,7 @@
     --colour-light: white;
 
     /* Accent colours */
-    --primary-accent: rgb(248, 100, 74);
+    --primary-accent: rgb(247, 91, 7);
 }
 
 /* Global Styles */
@@ -114,6 +114,10 @@ body {
     background-color: var(--primary-accent);
     border-color: var(--primary-accent);
     color: var(--colour-light);
+}
+
+.custom-btn:focus:not(:focus-visible) {
+    box-shadow: none;
 }
 
 /* Footer */
