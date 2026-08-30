@@ -33,3 +33,27 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+def update_bag(request, item_id):
+    """
+    Update the quantity of a specific album already in the bag to
+    the exact value submitted from the bag page's Update form.
+
+    Unlike add_to_bag, which increments an existing quantity, this
+    sets it outright to whatever was entered. If the submitted
+    quantity is 0 or less, the item is removed from the bag
+    entirely instead of being set to a zero/negative quantity.
+    """
+    album = get_object_or_404(Album, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 0:
+        bag[item_id] = quantity
+        messages.success(request, f'Updated {album.title} quantity to {quantity}')
+    else:
+        bag.pop(item_id, None)
+        messages.success(request, f'Removed {album.title} from your bag')
+
+    request.session['bag'] = bag
+    return redirect(reverse('bag:view_bag'))
