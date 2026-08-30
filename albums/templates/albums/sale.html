@@ -33,7 +33,12 @@
                     <p class="font-weight-bold mb-0">£{{ album.price }}</p>
                     {% endif %}
                     <p class="small mb-3">{{ album.get_format_display }}</p>
-                    <a href="#" class="btn custom-btn mt-auto">Add to Basket</a>
+                    <form action="{% url 'bag:add_to_bag' album.id %}" method="POST" class="mt-auto">
+                        {% csrf_token %}
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn custom-btn w-100">Add to Bag</button>
+                    </form>
                 </div>
             </div>
         </div>
