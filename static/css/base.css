@@ -193,6 +193,8 @@ body {
     padding-left: 0;
     padding-right: 0;
     height: auto;
+    background-color: var(--colour-light);
+    border: 2px solid var(--colour-dark);
 }
 
 .qty-selector button:focus:not(:focus-visible) {
