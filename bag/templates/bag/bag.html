@@ -35,7 +35,7 @@
                 <p class="mb-1 font-weight-bold headings">{{ item.album.title }}</p>
             </a>
             <p class="mb-0 small">Unit price: £{{ item.price }}</p>
-            <a href="#" class="small text-danger">
+            <a href="{% url 'bag:remove_from_bag' item.item_id %}" class="small text-danger">
                 <i class="fas fa-times-circle mr-1"></i>Remove
             </a>
         </div>

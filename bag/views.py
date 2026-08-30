@@ -57,3 +57,28 @@ def update_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(reverse('bag:view_bag'))
+
+
+def remove_from_bag(request, item_id):
+    """
+    Remove an album entirely from the bag, regardless of its
+    current quantity.
+
+    This is triggered by a GET request from a plain link (not a
+    form), so it's wrapped in a try/except: if the item is already
+    missing from the session bag or something else goes wrong, the
+    user is still redirected back to the bag with an error message
+    rather than seeing a server error page.
+    """
+    try:
+        album = get_object_or_404(Album, pk=item_id)
+        bag = request.session.get('bag', {})
+
+        bag.pop(item_id, None)
+        messages.success(request, f'Removed {album.title} from your bag')
+
+        request.session['bag'] = bag
+        return redirect(reverse('bag:view_bag'))
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return redirect(reverse('bag:view_bag'))
