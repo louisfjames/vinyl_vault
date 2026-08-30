@@ -71,7 +71,12 @@
                     <li class="list-inline-item">
                         <a class="text-white nav-link" href="{% url 'bag:view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-cart fa-lg navbar-icon"></i></div>
+                                <div class="position-relative d-inline-block">
+                                    <i class="fas fa-shopping-basket fa-lg navbar-icon"></i>
+                                    {% if product_count > 0 %}
+                                    <span class="badge-notification">{{ product_count }}</span>
+                                    {% endif %}
+                                </div>
                             </div>
                         </a>
                     </li>

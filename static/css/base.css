@@ -54,6 +54,20 @@ body {
     text-decoration: underline;
 }
 
+.badge-notification {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: var(--primary-accent);
+    color: var(--colour-light);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 18px;
+    text-align: center;
+}
+
 /* Rolling sale banner */
 .sale-banner {
     background-color: var(--primary-accent);
