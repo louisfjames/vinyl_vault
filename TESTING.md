@@ -30,7 +30,7 @@ Iteration Breakdown:
     - Validated sorting by price, release date, and name.
     - Checked album detail pages for accurate tracklists and formats.
     - Verified adding, updating, and removing items from the shopping bag.
-    - Confirmed live total updates in the navbar.
+    - Confirmed live bag totals in the navbar.
 
 - **Iteration 3 – Checkout & Payments**
     - Tested checkout flow: delivery details, order summary, and confirmation emails.
@@ -51,8 +51,7 @@ A consistent testing routine was maintained throughout development to ensure eac
 |------------------------------------------------------------------|---------------|
 | Project initiated | 25th July 2026 |
 | Iteration 1 testing (manual testing + acceptance criteria checks) | 9th & 14th August 2026 |
-| Iteration 2 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
-| Automated testing via Django | XX XX 2026|
+| Iteration 2 testing (manual testing + acceptance criteria checks) | 31st August 2026 |
 | Iteration 3 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
 | Automated testing via Django | XX XX 2026|
 | Iteration 4 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
