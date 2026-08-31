@@ -96,8 +96,35 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 
 
 #### Iteration Two – xx
-x
-Include 404 page.
+#### Iteration Two – Product Browsing & Shopping Bag
+
+| Area | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- | --- |
+| Browsing | Album catalogue loads | All albums display with correct data | Loaded albums page | All albums appear with correct titles, artists & prices | ✅ **PASS** |
+| Browsing | Latest releases filter | Shows only newly added or recently released albums | Clicked “Latest Releases” filter | Correct subset displayed | ✅ **PASS** |
+| Browsing | Search bar - valid search | Returns matching albums | Searched for known artist/album | Correct results shown | ✅ **PASS** |
+| Browsing | Search bar - no results | Shows “no results” message | Searched for nonsense term | Clear message displayed | ✅ **PASS** |
+| Browsing | Search bar - special characters | Handles unusual input safely | Entered symbols and punctuation | No errors; safe fallback | ✅ **PASS** |
+| Sorting | Sort by price | Albums reorder correctly (low to high, high to low) | Tested both sort directions | Sorting accurate | ✅ **PASS** |
+| Sorting | Sort by release date | Albums reorder newest → oldest | Selected release date sort | Order correct | ✅ **PASS** |
+| Sorting | Sort by name | Albums reorder A to Z | Selected alphabetical sort | Order correct | ✅ **PASS** |
+| Sale | Sale filter | Shows only discounted albums | Clicked “On Sale” filter | Only sale items displayed | ✅ **PASS** |
+| Product Detail | Album detail page loads | Full album info displays (tracklist, format, price, image) | Opened multiple albums | All details load correctly | ✅ **PASS** |
+| Product Detail | Tracklist display | Tracklist visible and readable | Checked tracklist section | All tracks display correctly | ✅ **PASS** |
+| Product Detail | Format information | Vinyl format and metadata shown | Checked format section | Correct format displayed | ✅ **PASS** |
+| Shopping Bag | Add to bag | Adds selected album to bag | Clicked “Add to Bag” | Item appears in bag | ✅ **PASS** |
+| Shopping Bag | Add multiple items | Bag updates correctly with multiple albums | Added several albums | All items appear correctly | ✅ **PASS** |
+| Shopping Bag | Update quantity | Quantity selector updates total | Increased/decreased quantity | Total updates correctly | ✅ **PASS** |
+| Shopping Bag | Remove item | Item removed from bag | Clicked remove icon | Item removed successfully | ✅ **PASS** |
+| Shopping Bag | Empty bag state | Shows correct empty bag message | Removed all items | Empty state displays | ✅ **PASS** |
+| Bag Feedback | Navbar bag counter | Counter updates with correct quantity | Added and removed items | Counter updates instantly | ✅ **PASS** |
+| Bag Feedback | Counter resets on logout | Bag clears when user logs out | Logged out and checked counter | Counter reset to zero | ✅ **PASS** |
+| Layout | Product grid responsiveness | Grid adapts to screen size | Tested desktop/tablet/mobile | Layout stable | ✅ **PASS** |
+| Layout | Product detail responsiveness | Detail page adapts to screen size | Tested desktop/tablet/mobile | Layout stable | ✅ **PASS** |
+| Error Handling | Invalid product ID | Redirects to 404 page | Entered invalid product URL | Custom 404 displayed | ✅ **PASS** |
+| Error Handling | Bag manipulation errors | Prevents invalid quantity values | Entered invalid quantity | Validation prevents errors | ✅ **PASS** |
+| Performance | Product list load speed | Albums load quickly | Tested across devices | Fast load times | ✅ **PASS** |
+| Performance | Bag update speed | Bag updates instantly | Added/removed items repeatedly | No delay or lag | ✅ **PASS** |
 
 
 
