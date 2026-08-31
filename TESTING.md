@@ -95,8 +95,7 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Performance | Tablet responsiveness | Layout adapts to medium screens | Tested on tablet | Minor spacing issues | ✅ **PASS** |
 
 
-#### Iteration Two – xx
-#### Iteration Two – Product Browsing & Shopping Bag
+#### Iteration Two
 
 | Area | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -125,7 +124,6 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Error Handling | Bag manipulation errors | Prevents invalid quantity values | Entered invalid quantity | Validation prevents errors | ✅ **PASS** |
 | Performance | Product list load speed | Albums load quickly | Tested across devices | Fast load times | ✅ **PASS** |
 | Performance | Bag update speed | Bag updates instantly | Added/removed items repeatedly | No delay or lag | ✅ **PASS** |
-
 
 
 #### Iteration Three – xxx
@@ -163,7 +161,28 @@ This table outlines the key user stories and acceptance criteria completed durin
 
 
 #### Iteration Two
-xxx
+
+| User Story | Acceptance Criteria | Result | Testing Performed |
+| --- | --- | --- | --- |
+| **US 2.1.1 – Browse All Albums (Must Have)** | Users can view a full catalogue of albums pulled dynamically from the database. | ✅ **PASS** | Album catalogue loads correctly; all products display with accurate data from the database. |
+| **US 2.1.1 – Browse All Albums (Must Have)** | The browse page loads reliably and remains responsive across devices. | ✅ **PASS** | Tested on desktop, tablet, and mobile; layout adjusts smoothly and remains stable. |
+| **US 2.1.2 – Filter by Latest Releases (Must Have)** | Users can view a dedicated “Latest Releases” section showing recently added products. | ✅ **PASS** | “Latest Releases” filter displays only newly added albums; verified against database entries. |
+| **US 2.1.2 – Filter by Latest Releases (Must Have)** | Filtering logic correctly returns only products marked as new. | ✅ **PASS** | Filter tested with mixed dataset; only items flagged as new appear. |
+| **US 2.1.3 – Search for Artist or Album (Should Have)** | Users can search by album title or artist name and receive accurate results. | ✅ **PASS** | Search returns correct matches for artist and album queries. |
+| **US 2.1.3 – Search for Artist or Album (Should Have)** | Search queries handle partial matches and return a clear “no results” message when needed. | ✅ **PASS** | Partial matches return expected results; invalid queries show clear “no results” message. |
+| **US 2.2.1 – Sort Albums (Should Have)** | Users can sort products using selectable criteria (price, release date, name). | ✅ **PASS** | Sorting tested across all criteria; order updates correctly. |
+| **US 2.2.1 – Sort Albums (Should Have)** | Sorting updates the product list without breaking pagination or layout. | ✅ **PASS** | Sorting verified with pagination active; layout remains intact. |
+| **US 2.2.2 – View Sale Items (Must Have)** | Users can access a dedicated sale page showing discounted products. | ✅ **PASS** | Sale page loads correctly; only discounted items displayed. |
+| **US 2.2.2 – View Sale Items (Must Have)** | Sale pricing is clearly displayed and calculated correctly. | ✅ **PASS** | Discount logic verified; sale prices display accurately. |
+| **US 2.3.1 – View Product Details (Must Have)** | Product detail pages display album information including tracklist, format, and pricing. | ✅ **PASS** | Detail pages show all required fields; data loads dynamically. |
+| **US 2.3.1 – View Product Details (Must Have)** | Each album page provides an intuitive layout that helps users compare formats and understand what they’re purchasing. | ✅ **PASS** | Layout tested for clarity and accessibility; comparison sections readable. |
+| **US 2.3.2 – Add Items to Bag (Must Have)** | Users can add products to their shopping bag with a single action. | ✅ **PASS** | “Add to Bag” button adds item instantly; confirmation message displayed. |
+| **US 2.3.2 – Add Items to Bag (Must Have)** | A confirmation message appears after adding an item. | ✅ **PASS** | Success message appears consistently after each addition. |
+| **US 2.3.3 – Update or Remove Bag Items (Must Have)** | Users can adjust quantities or remove items directly from the bag page. | ✅ **PASS** | Quantity and remove functions tested; updates apply immediately. |
+| **US 2.3.3 – Update or Remove Bag Items (Must Have)** | Bag totals update automatically when changes are made. | ✅ **PASS** | Totals recalculate correctly after each modification. |
+| **US 2.4.1 – Navbar Running Total (Should Have)** | When a shopper adds or removes items from the shopping bag, the total number of vinyls displayed in the navbar updates immediately without requiring a page refresh. | ✅ **PASS** | Navbar counter updates dynamically; verified across all pages. |
+| **US 2.4.1 – Navbar Running Total (Should Have)** | When the shopper empties the bag or logs out, the running total in the navbar resets to zero. | ✅ **PASS** | Counter resets correctly on logout and empty bag state. |
+
 
 #### Iteration Three
 xxx
