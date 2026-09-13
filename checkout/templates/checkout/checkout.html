@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <h2>Checkout</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h4>Order Summary</h4>
+            <p>Total: £{{ total }}</p>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <h5>Your Details</h5>
+            <form method="POST">
+                {% csrf_token %}
+                {{ order_form | crispy }}
+                <button type="submit" class="btn btn-primary">
+                    Continue to payment
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

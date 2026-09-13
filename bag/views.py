@@ -34,6 +34,7 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+
 def update_bag(request, item_id):
     """
     Update the quantity of a specific album already in the bag to

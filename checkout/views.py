@@ -10,7 +10,7 @@ def checkout(request):
         return redirect(reverse('albums'))
 
     current_bag = bag_contents(request)
-    total = current_bag['grand_total']
+    total = current_bag['total']
     order_form = OrderForm()
 
     context = {
