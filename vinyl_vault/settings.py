@@ -183,5 +183,5 @@ STORAGES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Project specigic settings
+# Project specific settings
 STANDARD_DELIVERY_COST = Decimal('4.99')
