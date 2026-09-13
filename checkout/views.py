@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.conf import settings
 import json
 
 from bag.contexts import bag_contents
@@ -48,6 +49,28 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. '
                                      'Please double check your information.')
+
+    if not bag:
+        messages.error(request, "Your bag is currently empty")
+        return redirect(reverse('albums'))
+
+    current_bag = bag_contents(request)
+    bag_items = current_bag['bag_items']
+    total = current_bag['total']
+    delivery = settings.STANDARD_DELIVERY_COST
+    grand_total = total + delivery
+
+    if request.method != 'POST':
+        order_form = OrderForm()
+
+    context = {
+        'order_form': order_form,
+        'bag_items': bag_items,
+        'total': total,
+        'delivery': delivery,
+        'grand_total': grand_total,
+    }
+    return render(request, 'checkout/checkout.html', context)
 
 
 def checkout_success(request, order_number):

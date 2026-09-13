@@ -1,26 +1,74 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %} 
 
 {% block content %}
-<div class="container">
-    <h2>Checkout</h2>
-    <hr>
+<div class="container checkout-container">
+
+    <!-- Step indicator -->
+    <div class="checkout-steps">
+        <div class="checkout-step">
+            <div class="step-circle step-circle--active">1</div>
+            <p class="step-label step-label--active">Delivery</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="checkout-step">
+            <div class="step-circle">2</div>
+            <p class="step-label">Payment</p>
+        </div>
+    </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6">
-            <h4>Order Summary</h4>
-            <p>Total: £{{ total }}</p>
-        </div>
-
-        <div class="col-12 col-lg-6">
-            <h5>Your Details</h5>
+        <div class="col-12 col-lg-7 mb-4 mb-lg-0">
+            <h2>Your Details</h2>
+            <hr class="section-divider">
             <form method="POST">
                 {% csrf_token %}
                 {{ order_form | crispy }}
-                <button type="submit" class="btn btn-primary">
-                    Continue to payment
-                </button>
+                <button type="submit" class="btn custom-btn">Continue to payment</button>
             </form>
+        </div>
+
+        <div class="col-12 col-lg-5">
+            <div class="order-summary">
+                <h4 class="mb-3">Order Summary</h4>
+                <hr class="section-divider">
+
+                {% for item in bag_items %}
+                <div class="order-summary-item">
+                    {% if item.album.cover_image_url %}
+                    <img src="{{ item.album.cover_image_url }}" alt="{{ item.album.title }}"
+                         class="order-summary-cover">
+                    {% endif %}
+                    <div class="order-summary-details">
+                        <p class="order-summary-title">{{ item.album.title }}</p>
+                        <p class="order-summary-meta">Unit price: £{{ item.price }}</p>
+                        <p class="order-summary-meta">Quantity: {{ item.quantity }}</p>
+                    </div>
+                    <div class="order-summary-subtotal">
+                        <p>£{{ item.subtotal }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="order-summary-row">
+                    <span>Subtotal:</span>
+                    <span>£{{ total }}</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>Delivery:</span>
+                    <span>£{{ delivery }}</span>
+                </div>
+                <hr class="section-divider">
+                <div class="order-summary-row order-summary-total">
+                    <strong>Total to pay:</strong>
+                    <strong>£{{ grand_total }}</strong>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,133 @@
+/* ============ Checkout Styles ============ */
+
+/* CSS Variables */
+:root {
+    /* Core colours */
+    --colour-dark: rgb(27, 27, 33);
+    --colour-light: white;
+
+    /* Accent colours */
+    --primary-accent: rgb(247, 91, 7);
+}
+
+.checkout-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Step indicator */
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.checkout-step {
+    text-align: center;
+}
+
+.step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: bold;
+    color: var(--colour-light);
+    background-color: #ccc;
+}
+
+.step-circle--active {
+    background-color: var(--primary-accent);
+}
+
+.step-label {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.step-label--active {
+    font-weight: bold;
+    color: #212529;
+}
+
+.step-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #ccc;
+    margin: 0 1rem;
+}
+
+/* Section headings */
+.section-divider {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-submit-btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.75rem;
+}
+
+/* Order summary */
+.order-summary {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+}
+
+.order-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-summary-item:first-of-type {
+    padding-top: 0;
+}
+
+.order-summary-cover {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 0.375rem;
+    flex-shrink: 0;
+}
+
+.order-summary-details {
+    flex-grow: 1;
+}
+
+.order-summary-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.order-summary-meta {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.order-summary-subtotal {
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.order-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.order-summary-total {
+    margin-top: 0.75rem;
+}
