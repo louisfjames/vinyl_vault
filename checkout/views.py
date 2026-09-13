@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 import json
 
@@ -48,3 +48,22 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. '
                                      'Please double check your information.')
+
+
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'checkout/checkout_success.html', context)
