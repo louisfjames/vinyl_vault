@@ -185,3 +185,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Project specific settings
 STANDARD_DELIVERY_COST = Decimal('4.99')
+
+# Stripe settings
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
