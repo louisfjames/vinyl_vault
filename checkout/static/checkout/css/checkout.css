@@ -131,3 +131,11 @@
 .order-summary-total {
     margin-top: 0.75rem;
 }
+
+/* Checkout Buttons */
+.checkout-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
