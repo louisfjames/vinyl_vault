@@ -30,8 +30,8 @@
                 {% csrf_token %}
                 {{ order_form | crispy }}
                 <div class="checkout-actions">
-                    <a href="{% url 'bag:view_bag' %}" class="custom-btn">Return to Bag</a>
-                    <button type="submit" class="btn custom-btn">Continue to payment</button>
+                    <a href="{% url 'bag:view_bag' %}" class="custom-btn"><i class="fas fa-arrow-left mr-2"></i>Return to Bag</a>
+                    <button type="submit" class="btn custom-btn">Continue to payment<i class="fas fa-arrow-right ml-2"></i></button>
                 </div>
             </form>
         </div>
