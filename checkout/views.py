@@ -8,6 +8,8 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from albums.models import Album
 
+import stripe
+
 
 def checkout(request):
     bag = request.session.get('bag', {})
