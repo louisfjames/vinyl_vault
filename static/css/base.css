@@ -450,6 +450,39 @@ hr {
 }
 
 
+.page-container {
+    max-width: 960px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    margin: 0.75rem 0 1.25rem;
+}
+
+.info-card {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+}
+
+.info-card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.info-card-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+}
+
+.page-container {
+    max-width: 960px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
 /* ============ Media Queries ============ */
 
 @media (max-width: 991px) {

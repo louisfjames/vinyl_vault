@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from albums.models import Album
 from django.shortcuts import render
+from .forms import ContactForm
 
-# Create your views here.
 
 def index(request):
     """ A view that returns the index page """
@@ -20,6 +20,18 @@ def about(request):
     """ A view that returns the about page """
     return render(request, 'about.html')
 
+
 def contact(request):
-    """ A view that returns the contact page """
-    return render(request, 'contact.html')
+    """ A view that handles the contact form """
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            # Email sending will be wired up here later
+            messages.success(request, "Thanks for getting in touch — we'll reply soon.")
+            return redirect('contact')
+        else:
+            messages.error(request, 'There was an error with your form. Please double check your information.')
+    else:
+        contact_form = ContactForm()
+
+    return render(request, 'contact.html', {'contact_form': contact_form})
