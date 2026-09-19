@@ -104,7 +104,7 @@
                     <a class="nav-link font-weight-bold" href="{% url 'albums:sale_albums' %}">Sale</a>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link font-weight-bold" href="#">Contact</a>
+                    <a class="nav-link font-weight-bold" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item mx-3">
                     <a class="nav-link font-weight-bold" href="{% url 'about' %}">About</a>
@@ -179,8 +179,8 @@
                     {% else %}
                         <a href="{% url 'account_login' %}" class="footer-text footer-link-spacing">Login</a>
                     {% endif %}
-                    <a href="" class="footer-text footer-link-spacing">Contact</a>
-                    <a href="" class="footer-text">About</a>
+                    <a href="{% url 'contact' %}" class="footer-text footer-link-spacing">Contact</a>
+                    <a href="{% url 'about' %}" class="footer-text">About</a>
                 </div>
                 <!-- Social Media Icons -->
                 <div class="d-flex mt-4 mt-md-0">
