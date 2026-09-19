@@ -11,6 +11,7 @@
 
     /* Accent colours */
     --primary-accent: rgb(247, 91, 7);
+    --background-accent: #f1f2f3;
 }
 
 /* Global Styles */
@@ -67,6 +68,15 @@ body {
     min-width: 18px;
     text-align: center;
 }
+
+/* Album cards */
+.album-card {
+    background-color: var(--background-accent);
+    border: none;
+    border-radius: 0;
+    transition: box-shadow 0.2s ease;
+}
+
 
 /* Rolling sale banner */
 .sale-banner {
@@ -210,6 +220,13 @@ input[name="quantity"].form-control:focus {
 
 .qty-selector button:focus:not(:focus-visible) {
     box-shadow: none;
+}
+
+.format-card {
+    background-color: var(--background-accent);
+    border: none;
+    border-radius: 0;
+    transition: box-shadow 0.2s ease;
 }
 
 /* ============ Authentication Pages ============ */
