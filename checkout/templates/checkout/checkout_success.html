@@ -1,48 +1,67 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h2>Thank you for your order</h2>
-            <hr>
-            <p>Your order information is below. A confirmation email will be sent to
-                <strong>{{ order.email }}</strong>.</p>
-        </div>
-    </div>
+<div class="container checkout-container">
 
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <h5>Order Info</h5>
-            <p>Order Number: {{ order.order_number }}</p>
-            <p>Order Date: {{ order.date }}</p>
-        </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-7">
 
-        <div class="col-12 col-lg-6">
-            <h5>Delivery Info</h5>
-            <p>{{ order.full_name }}</p>
-            <p>{{ order.street_address1 }}</p>
-            {% if order.street_address2 %}<p>{{ order.street_address2 }}</p>{% endif %}
-            <p>{{ order.town_or_city }}</p>
-            {% if order.county %}<p>{{ order.county }}</p>{% endif %}
-            {% if order.postcode %}<p>{{ order.postcode }}</p>{% endif %}
-            <p>{{ order.country }}</p>
-            <p>{{ order.phone_number }}</p>
-        </div>
-    </div>
+            <div class="text-center mb-4">
+                <h2 class="logo-font">Thank you for your order</h2>
+                <hr class="section-divider">
+                <p class="text mb-0">A confirmation email will be sent to
+                    <strong>{{ order.email }}</strong>.</p>
+            </div>
 
-    <div class="row">
-        <div class="col-12">
-            <h5>Order Total</h5>
-            <p>Order Total: £{{ order.order_total }}</p>
-            <p>Delivery: £{{ order.delivery_cost }}</p>
-            <p><strong>Grand Total: £{{ order.grand_total }}</strong></p>
-        </div>
-    </div>
+            <div class="order-summary">
+                <h4 class="mb-3">Order Info</h4>
+                <hr class="section-divider">
+                <div class="order-summary-row">
+                    <span>Order Number:</span>
+                    <span>{{ order.order_number }}</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>Order Date:</span>
+                    <span>{{ order.date }}</span>
+                </div>
 
-    <div class="row">
-        <div class="col-12">
-            <a href="{% url 'albums' %}" class="btn custom-btn mt-3">Continue Shopping</a>
+                <h4 class="mb-3 mt-4">Delivery Info</h4>
+                <hr class="section-divider">
+                <p class="mb-1">{{ order.full_name }}</p>
+                <p class="mb-1">{{ order.street_address1 }}</p>
+                {% if order.street_address2 %}<p class="mb-1">{{ order.street_address2 }}</p>{% endif %}
+                <p class="mb-1">{{ order.town_or_city }}</p>
+                {% if order.county %}<p class="mb-1">{{ order.county }}</p>{% endif %}
+                {% if order.postcode %}<p class="mb-1">{{ order.postcode }}</p>{% endif %}
+                <p class="mb-1">{{ order.country }}</p>
+                <p class="mb-0">{{ order.phone_number }}</p>
+
+                <h4 class="mb-3 mt-4">Order Total</h4>
+                <hr class="section-divider">
+                <div class="order-summary-row">
+                    <span>Order Total:</span>
+                    <span>£{{ order.order_total }}</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>Delivery:</span>
+                    <span>£{{ order.delivery_cost }}</span>
+                </div>
+                <hr class="section-divider">
+                <div class="order-summary-row order-summary-total">
+                    <strong>Grand Total:</strong>
+                    <strong>£{{ order.grand_total }}</strong>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'home' %}" class="custom-btn">Continue Shopping</a>
+            </div>
+
         </div>
     </div>
 </div>
