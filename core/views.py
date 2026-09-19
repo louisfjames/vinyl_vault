@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 from albums.models import Album
-from django.shortcuts import render
 from .forms import ContactForm
-
 
 def index(request):
     """ A view that returns the index page """
@@ -26,7 +27,18 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            # Email sending will be wired up here later
+            name = contact_form.cleaned_data['name']
+            email = contact_form.cleaned_data['email']
+            phone_number = contact_form.cleaned_data['phone_number']
+            message = contact_form.cleaned_data['message']
+
+            send_mail(
+                subject=f'New contact form message from {name}',
+                message=f'From: {name} ({email})\nPhone: {phone_number}\n\n{message}',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=['louisfredjames@gmail.com'],
+            )
+
             messages.success(request, "Thanks for getting in touch — we'll reply soon.")
             return redirect('contact')
         else:
