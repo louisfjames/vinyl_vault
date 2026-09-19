@@ -12,8 +12,10 @@ import stripe
 
 
 def checkout(request):
-    bag = request.session.get('bag', {})
-
+    """
+    Collect the customer's delivery and contact details, then move on
+    to the payment step once the form is valid.
+    """
     if request.method == 'POST':
         form_data = {
             'full_name': request.POST['full_name'],
@@ -27,6 +29,58 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            request.session['checkout_data'] = order_form.cleaned_data
+            return redirect(reverse('payment'))
+        else:
+            messages.error(request, 'There was an error with your form. '
+                                     'Please double check your information.')
+    else:
+        order_form = OrderForm()
+
+    bag = request.session.get('bag', {})
+    if not bag:
+        messages.error(request, "Your bag is currently empty")
+        return redirect(reverse('albums:browse_albums'))
+
+    current_bag = bag_contents(request)
+    bag_items = current_bag['bag_items']
+    total = current_bag['total']
+    delivery = settings.STANDARD_DELIVERY_COST
+    grand_total = total + delivery
+
+    context = {
+        'order_form': order_form,
+        'bag_items': bag_items,
+        'total': total,
+        'delivery': delivery,
+        'grand_total': grand_total,
+    }
+    return render(request, 'checkout/checkout.html', context)
+
+
+def payment(request):
+    """
+    Create a Stripe PaymentIntent and render the card payment form.
+    On POST (after the card has been confirmed client-side), create
+    the Order and OrderLineItems from the session data and bag, then
+    redirect to the success page.
+    """
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    checkout_data = request.session.get('checkout_data')
+    if not checkout_data:
+        messages.error(request, "Please enter your details before payment.")
+        return redirect(reverse('checkout'))
+
+    bag = request.session.get('bag', {})
+    if not bag:
+        messages.error(request, "Your bag is currently empty")
+        return redirect(reverse('albums:browse_albums'))
+
+    if request.method == 'POST':
+        order_form = OrderForm(checkout_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
             order.original_bag = json.dumps(bag)
@@ -47,32 +101,41 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('bag:view_bag'))
 
+            del request.session['checkout_data']
+            if 'bag' in request.session:
+                del request.session['bag']
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. '
-                                     'Please double check your information.')
-
-    if not bag:
-        messages.error(request, "Your bag is currently empty")
-        return redirect(reverse('albums'))
+            messages.error(request, 'There was an error placing your order. '
+                                     'Please try again.')
+            return redirect(reverse('checkout'))
 
     current_bag = bag_contents(request)
     bag_items = current_bag['bag_items']
     total = current_bag['total']
     delivery = settings.STANDARD_DELIVERY_COST
     grand_total = total + delivery
+    stripe_total = round(grand_total * 100)
 
-    if request.method != 'POST':
-        order_form = OrderForm()
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
 
     context = {
-        'order_form': order_form,
         'bag_items': bag_items,
         'total': total,
         'delivery': delivery,
         'grand_total': grand_total,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
-    return render(request, 'checkout/checkout.html', context)
+    return render(request, 'checkout/payment.html', context)
 
 
 def checkout_success(request, order_number):
