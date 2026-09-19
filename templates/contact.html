@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container checkout-container">
+
+    <div class="row">
+        <div class="col-12 mb-4">
+            <h2 class="logo-font">Contact Us</h2>
+            <hr class="section-divider">
+            <p class="text-muted">
+                Got a question about an order, a record you're after, or anything
+                else? Get in touch using the details below, or send us a message
+                using the form and we'll get back to you as soon as we can.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="order-summary">
+                <h4 class="mb-3">Get in Touch</h4>
+                <hr class="section-divider">
+                <div class="order-summary-row">
+                    <span><i class="fas fa-envelope mr-2"></i>Email</span>
+                    <span>hello@vinylvault.co.uk</span>
+                </div>
+                <div class="order-summary-row">
+                    <span><i class="fas fa-map-marker-alt mr-2"></i>Address</span>
+                    <span>1 Park Street, Bristol, BS1 2AB</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <h2 class="logo-font">Send Us a Message</h2>
+            <hr class="section-divider">
+            <form method="POST">
+                {% csrf_token %}
+                {{ contact_form | crispy }}
+                <div class="mt-4">
+                    <button type="submit" class="btn custom-btn">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
