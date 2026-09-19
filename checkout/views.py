@@ -140,9 +140,14 @@ def payment(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Display the order confirmation page for a completed checkout.
+
+    Looks up the Order by its order_number (passed in the URL after
+    payment succeeds and the Order is created), clears the session
+    bag, and renders the confirmation with the order's details.
     """
     order = get_object_or_404(Order, order_number=order_number)
+    order_items = order.lineitems.all()
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
@@ -152,6 +157,7 @@ def checkout_success(request, order_number):
 
     context = {
         'order': order,
+        'order_items': order_items,
     }
 
     return render(request, 'checkout/checkout_success.html', context)

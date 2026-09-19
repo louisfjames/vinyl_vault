@@ -41,6 +41,24 @@
                 <p class="mb-1">{{ order.country }}</p>
                 <p class="mb-0">{{ order.phone_number }}</p>
 
+                <h4 class="mb-3 mt-4">Items Purchased</h4>
+                <hr class="section-divider">
+                {% for item in order_items %}
+                <div class="order-summary-item">
+                    {% if item.album.cover_image_url %}
+                    <img src="{{ item.album.cover_image_url }}" alt="{{ item.album.title }}"
+                         class="order-summary-cover">
+                    {% endif %}
+                    <div class="order-summary-details">
+                        <p class="order-summary-title">{{ item.album.title }}</p>
+                        <p class="order-summary-meta">Quantity: {{ item.quantity }}</p>
+                    </div>
+                    <div class="order-summary-subtotal">
+                        <p>£{{ item.lineitem_total }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
                 <h4 class="mb-3 mt-4">Order Total</h4>
                 <hr class="section-divider">
                 <div class="order-summary-row">
