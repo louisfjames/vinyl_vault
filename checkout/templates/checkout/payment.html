@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container checkout-container">
+
+    <!-- Step indicator -->
+    <div class="checkout-steps">
+        <div class="checkout-step">
+            <div class="step-circle">1</div>
+            <p class="step-label">Delivery</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="checkout-step">
+            <div class="step-circle step-circle--active">2</div>
+            <p class="step-label step-label--active">Payment</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-7 mb-4 mb-lg-0">
+            <h2>Payment</h2>
+            <hr class="section-divider">
+
+            <form action="{% url 'payment' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-4">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Card Details</legend>
+                    <div class="mb-3" id="card-element"></div>
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
+
+                <div class="checkout-actions">
+                    <a href="{% url 'checkout' %}" class="custom-btn">Return to Details</a>
+                    <button id="submit-button" class="btn custom-btn">
+                        <span id="payment-button-text">Complete Order</span>
+                        <span id="payment-spinner" class="d-none">Processing...</span>
+                    </button>
+                </div>
+                <p class="small text-danger mt-2 mb-0 text-right">
+                    Your card will be charged <strong>£{{ grand_total }}</strong>
+                </p>
+            </form>
+        </div>
+
+        <div class="col-12 col-lg-5">
+            <div class="order-summary">
+                <h4 class="mb-3">Order Summary</h4>
+                <hr class="section-divider">
+
+                {% for item in bag_items %}
+                <div class="order-summary-item">
+                    {% if item.album.cover_image_url %}
+                    <img src="{{ item.album.cover_image_url }}" alt="{{ item.album.title }}"
+                         class="order-summary-cover">
+                    {% endif %}
+                    <div class="order-summary-details">
+                        <p class="order-summary-title">{{ item.album.title }}</p>
+                        <p class="order-summary-meta">Unit price: £{{ item.price }}</p>
+                        <p class="order-summary-meta">Quantity: {{ item.quantity }}</p>
+                    </div>
+                    <div class="order-summary-subtotal">
+                        <p>£{{ item.subtotal }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="order-summary-row">
+                    <span>Subtotal:</span>
+                    <span>£{{ total }}</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>Delivery:</span>
+                    <span>£{{ delivery }}</span>
+                </div>
+                <hr class="section-divider">
+                <div class="order-summary-row order-summary-total">
+                    <strong>Total to pay:</strong>
+                    <strong>£{{ grand_total }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
