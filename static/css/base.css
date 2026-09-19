@@ -1,9 +1,13 @@
 /* ============ Site Wide Styles ============ */
 
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap');
+
 /* CSS Variables */
 :root {
     /* Typography */
-
+    --font-heading: "Cabin", sans-serif;
+    --font-body: "Inter", sans-serif;
 
     /* Core colours */
     --colour-dark: rgb(27, 27, 33);
@@ -15,11 +19,21 @@
 }
 
 /* Global Styles */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 body {
+    font-family: var(--font-body);
     color: var(--colour-dark);
+
 }
 
 .headings {
+    font-family: var(--font-heading);
     color: var(--primary-accent);
     font-weight: bold;
 }
