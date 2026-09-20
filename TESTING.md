@@ -125,31 +125,26 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Performance | Bag update speed | Bag updates instantly | Added/removed items repeatedly | No delay or lag | ✅ **PASS** |
 
 
-#### Iteration Three – Checkout & Payments
+#### Iteration Three
 
 | Area | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Checkout | Delivery details form loads | User can enter name, address, postcode, and contact details | Opened checkout page | Form loads with all required fields | ✅ **PASS** |
 | Checkout | Delivery details validation | Shows errors for missing or invalid fields | Submitted empty/invalid fields | Clear validation errors displayed | ✅ **PASS** |
-| Checkout | Save delivery details | Details persist through checkout steps | Entered valid details and continued | Details saved and shown in summary | ✅ **PASS** |
 | Checkout | Order summary displays | Shows items, quantities, prices, delivery details, and totals | Reached order summary page | All information displayed correctly | ✅ **PASS** |
 | Checkout | Summary accuracy | Totals and item details match shopping bag | Compared bag vs summary | All values match | ✅ **PASS** |
 | Checkout | Edit order from summary | User can return to bag to adjust items | Clicked “Edit Bag” | Redirected correctly; changes reflected | ✅ **PASS** |
 | Payments | Card payment form loads | Secure card fields appear (number, expiry, CVC) | Opened payment step | All fields visible and functional | ✅ **PASS** |
 | Payments | Valid card payment | Successful payment processes correctly | Entered valid test card | Payment accepted; redirected to confirmation | ✅ **PASS** |
 | Payments | Invalid card payment | Shows clear error message for failed payment | Entered invalid/declined test card | Error displayed; user stays on payment page | ✅ **PASS** |
-| Payments | Payment security | Sensitive fields masked and transmitted securely | Inspected field behaviour | Card number masked; secure submission | ✅ **PASS** |
 | Payments | Prevent duplicate payments | Double-clicking pay button does not charge twice | Clicked pay repeatedly | Only one payment processed | ✅ **PASS** |
 | Confirmation | Order confirmation page loads | Shows order number, items, totals, and delivery details | Completed purchase | Confirmation page displayed correctly | ✅ **PASS** |
 | Confirmation | Confirmation email sent | Shopper receives email with order details | Completed purchase | Email received with correct info | ✅ **PASS** |
 | Confirmation | Email formatting | Email readable on desktop and mobile | Checked email on multiple devices | Layout clean and consistent | ✅ **PASS** |
-| Contact | Contact form loads | User can submit queries about orders/products | Opened contact page | Form loads with all fields | ✅ **PASS** |
 | Contact | Contact form validation | Shows errors for missing/invalid fields | Submitted empty/invalid form | Clear validation errors shown | ✅ **PASS** |
 | Contact | Contact form submission | Sends message successfully | Submitted valid form | Success message displayed | ✅ **PASS** |
 | Performance | Checkout load speed | Pages load quickly across devices | Tested on desktop/mobile | Fast load times | ✅ **PASS** |
 | Performance | Payment processing speed | Payment completes within expected time | Tested multiple payments | Consistent quick processing | ✅ **PASS** |
-
-
 
 
 
@@ -206,7 +201,22 @@ This table outlines the key user stories and acceptance criteria completed durin
 
 
 #### Iteration Three
-xxx
+
+| User Story | Acceptance Criteria | Status | Evidence/Notes |
+|-------------|---------------------|--------|----------------|
+| **US 3.1.1 – Enter Delivery Details (Must Have)** | Users can enter delivery information during checkout and see it clearly displayed. | ✅ **PASS** | Delivery form loads correctly; all fields visible and editable; details displayed clearly in summary. |
+| **US 3.1.1 – Enter Delivery Details (Must Have)** | Validation ensures all required fields are completed before continuing. | ✅ **PASS** | Empty fields trigger validation errors; invalid postcode rejected; checkout cannot proceed until valid. |
+| **US 3.1.2 – Review Order Summary (Must Have)** | Users can view a full order summary including items, quantities and totals. | ✅ **PASS** | Summary page displays all items, quantities, and totals accurately; verified against shopping bag data. |
+| **US 3.1.2 – Review Order Summary (Must Have)** | Summary updates automatically if the bag contents change. | ✅ **PASS** | Adjusted bag contents; summary refreshed instantly with updated totals and items. |
+| **US 3.2.1 – Secure Card Payments (Must Have)** | Stripe processes payments securely without exposing card details to the server. | ✅ **PASS** | Payment processed via Stripe test mode; card data encrypted; no sensitive info stored. |
+| **US 3.2.1 – Secure Card Payments (Must Have)** | Payment form validates correctly and prevents incomplete submissions. | ✅ **PASS** | Invalid or incomplete card entries blocked; clear error messages shown; successful payment redirects to confirmation. |
+| **US 3.2.2 – Handle Failed Payments (Must Have)** | Users receive clear feedback if a payment fails. | ✅ **PASS** | Simulated failed payment; error message displayed; user remains on payment page with retry option. |
+| **US 3.2.2 – Handle Failed Payments (Must Have)** | Failed payments do not create incomplete or duplicate orders. | ✅ **PASS** | Verified database entries; no duplicate or partial orders created after failed payment attempt. |
+| **US 3.3.1 – Receive Order Confirmation (Must Have)** | Users receive an on-screen confirmation page after successful payment. | ✅ **PASS** | Confirmation page loads correctly; displays order number, items, totals, and delivery details. |
+| **US 3.3.1 – Receive Order Confirmation (Must Have)** | A confirmation email is sent containing order details. | ✅ **PASS** | Email received in test inbox; includes correct order summary and branding; verified sender and content. |
+| **US 3.3.2 – Contact Form (Could Have)** | Users can submit a contact form with their message and email address. | ✅ **PASS** | Form loads correctly; tested submission with valid data; message sent successfully. |
+| **US 3.3.2 – Contact Form (Could Have)** | A confirmation page or message appears after successful submission. | ✅ **PASS** | Success message displayed immediately after submission; verified backend log entry. |
+
 
 #### Iteration Four
 xxx
