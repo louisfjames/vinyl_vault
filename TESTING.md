@@ -52,9 +52,9 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Project initiated | 25th July 2026 |
 | Iteration 1 testing (manual testing + acceptance criteria checks) | 9th & 14th August 2026 |
 | Iteration 2 testing (manual testing + acceptance criteria checks) | 31st August 2026 |
-| Iteration 3 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
-| Automated testing via Django | XX XX 2026|
+| Iteration 3 testing (manual testing + acceptance criteria checks) | 20th Sept 2026 |
 | Iteration 4 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
+| Automated testing via Django | XX XX 2026|
 | Google lighthouse audit testing | XX XX 2026 |
 | Validator and linter checks (HTML, CSS, JS, Python) | XX XX 2026 |
 | Automated testing via Django | XX XX 2026|
@@ -125,8 +125,30 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Performance | Bag update speed | Bag updates instantly | Added/removed items repeatedly | No delay or lag | ✅ **PASS** |
 
 
-#### Iteration Three – xxx
-xxx
+#### Iteration Three – Checkout & Payments
+
+| Area | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- | --- |
+| Checkout | Delivery details form loads | User can enter name, address, postcode, and contact details | Opened checkout page | Form loads with all required fields | ✅ **PASS** |
+| Checkout | Delivery details validation | Shows errors for missing or invalid fields | Submitted empty/invalid fields | Clear validation errors displayed | ✅ **PASS** |
+| Checkout | Save delivery details | Details persist through checkout steps | Entered valid details and continued | Details saved and shown in summary | ✅ **PASS** |
+| Checkout | Order summary displays | Shows items, quantities, prices, delivery details, and totals | Reached order summary page | All information displayed correctly | ✅ **PASS** |
+| Checkout | Summary accuracy | Totals and item details match shopping bag | Compared bag vs summary | All values match | ✅ **PASS** |
+| Checkout | Edit order from summary | User can return to bag to adjust items | Clicked “Edit Bag” | Redirected correctly; changes reflected | ✅ **PASS** |
+| Payments | Card payment form loads | Secure card fields appear (number, expiry, CVC) | Opened payment step | All fields visible and functional | ✅ **PASS** |
+| Payments | Valid card payment | Successful payment processes correctly | Entered valid test card | Payment accepted; redirected to confirmation | ✅ **PASS** |
+| Payments | Invalid card payment | Shows clear error message for failed payment | Entered invalid/declined test card | Error displayed; user stays on payment page | ✅ **PASS** |
+| Payments | Payment security | Sensitive fields masked and transmitted securely | Inspected field behaviour | Card number masked; secure submission | ✅ **PASS** |
+| Payments | Prevent duplicate payments | Double-clicking pay button does not charge twice | Clicked pay repeatedly | Only one payment processed | ✅ **PASS** |
+| Confirmation | Order confirmation page loads | Shows order number, items, totals, and delivery details | Completed purchase | Confirmation page displayed correctly | ✅ **PASS** |
+| Confirmation | Confirmation email sent | Shopper receives email with order details | Completed purchase | Email received with correct info | ✅ **PASS** |
+| Confirmation | Email formatting | Email readable on desktop and mobile | Checked email on multiple devices | Layout clean and consistent | ✅ **PASS** |
+| Contact | Contact form loads | User can submit queries about orders/products | Opened contact page | Form loads with all fields | ✅ **PASS** |
+| Contact | Contact form validation | Shows errors for missing/invalid fields | Submitted empty/invalid form | Clear validation errors shown | ✅ **PASS** |
+| Contact | Contact form submission | Sends message successfully | Submitted valid form | Success message displayed | ✅ **PASS** |
+| Performance | Checkout load speed | Pages load quickly across devices | Tested on desktop/mobile | Fast load times | ✅ **PASS** |
+| Performance | Payment processing speed | Payment completes within expected time | Tested multiple payments | Consistent quick processing | ✅ **PASS** |
+
 
 
 
