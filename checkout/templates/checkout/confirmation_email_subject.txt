@@ -1,0 +1,1 @@
+Vinyl Vault Confirmation Email {{ order.order_number }}

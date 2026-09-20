@@ -5,6 +5,7 @@ from django.conf import settings
 from albums.models import Album
 from .forms import ContactForm
 
+
 def index(request):
     """ A view that returns the index page """
     album_data = Album.objects.all().order_by('-release_date')

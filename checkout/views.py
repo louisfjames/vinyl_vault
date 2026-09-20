@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 import json
 
 from bag.contexts import bag_contents
@@ -100,6 +102,22 @@ def payment(request):
                     )
                     order.delete()
                     return redirect(reverse('bag:view_bag'))
+
+            # Send confirmation email
+            customer_email = order.email
+            subject = render_to_string(
+                'checkout/confirmation_email_subject.txt',
+                {'order': order})
+            body = render_to_string(
+                'checkout/confirmation_email_body.txt',
+                {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [customer_email]
+            )
 
             del request.session['checkout_data']
             if 'bag' in request.session:
