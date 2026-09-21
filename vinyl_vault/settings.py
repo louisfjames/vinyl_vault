@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'albums',
     'bag',
     'checkout',
+    'profiles',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
