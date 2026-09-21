@@ -25,6 +25,7 @@ urlpatterns = [
     path('albums/', include('albums.urls')),
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
+    path('profile/', include('profiles.urls')),
 ]
 
 def custom_404(request, exception=None):
