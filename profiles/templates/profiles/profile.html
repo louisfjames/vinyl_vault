@@ -6,6 +6,7 @@
 <div class="container page-container">
 
     <div class="row justify-content-center">
+        
         <div class="col-12 col-lg-8">
 
             <div class="mb-4 text-center">
@@ -42,6 +43,24 @@
                         </button>
                     </div>
                 </form>
+            </div>
+
+            <div class="info-card mt-4">
+                <h4 class="mb-3">Order History</h4>
+                <hr class="divider">
+                {% if orders %}
+                {% for order in orders %}
+                <div class="info-card-row">
+                    <span>
+                        <a href="{% url 'order_history' order.order_number %}">{{ order.order_number|truncatechars:8 }}</a>
+                        <span class="text-muted small ml-2">{{ order.date|date:"d M Y" }}</span>
+                    </span>
+                    <span>£{{ order.grand_total }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p class="text-muted mb-0">You haven't placed any orders yet.</p>
+                {% endif %}
             </div>
 
         </div>
