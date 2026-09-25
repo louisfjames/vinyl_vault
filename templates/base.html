@@ -60,7 +60,7 @@
                             <div><i class="far fa-user-circle fa-lg navbar-icon"></i></div>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <div class="dropdown-menu dropdown-menu-right border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a href="{% url 'albums:store_management' %}" class="dropdown-item">Store Management</a>
