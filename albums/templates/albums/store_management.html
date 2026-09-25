@@ -36,7 +36,13 @@
                 <td>
                     <div class="d-flex" style="gap: 0.5rem;">
                         <a href="#" class="btn btn-sm custom-btn">Edit</a>
-                        <a href="#" class="btn btn-sm custom-btn">Delete</a>
+                        <button type="button" class="btn btn-sm remove-btn"
+                            data-toggle="modal"
+                            data-target="#deleteAlbumModal"
+                            data-delete-url="{% url 'albums:delete_album' album.id %}"
+                            data-album-title="{{ album.title }}">
+                            Delete
+                        </button>
                     </div>
                 </td>
             </tr>
@@ -82,4 +88,43 @@
     </nav>
     {% endif %}
 </div>
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteAlbumModal" tabindex="-1" role="dialog" aria-labelledby="deleteAlbumModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content site-modal-content">
+            <div class="modal-header site-modal-header">
+                <h5 class="modal-title logo-font" id="deleteAlbumModalLabel">Delete album</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Delete <strong id="deleteAlbumModalTitle"></strong>? This cannot be undone.
+            </div>
+            <div class="modal-footer site-modal-footer">
+                <button type="button" class="btn custom-btn rounded-0" data-dismiss="modal">Cancel</button>
+                <form id="deleteAlbumForm" method="POST" action="" style="display: contents;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn remove-btn rounded-0">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    $('#deleteAlbumModal').on('show.bs.modal', function (event) {
+        const trigger = $(event.relatedTarget);
+        const deleteUrl = trigger.data('delete-url');
+        const albumTitle = trigger.data('album-title');
+
+        $('#deleteAlbumForm').attr('action', deleteUrl);
+        $('#deleteAlbumModalTitle').text(albumTitle);
+    });
+</script>
 {% endblock %}

@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Album
 from django.core.paginator import Paginator
 from datetime import date, timedelta
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.views.decorators.http import require_POST
 
 
 def album_detail(request, album_id):
@@ -136,3 +137,16 @@ def store_management(request):
         'albums': albums,
     }
     return render(request, template, context)
+
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+@require_POST
+def delete_album(request, album_id):
+    """
+    Delete a single album. POST-only (via require_POST) since this is
+    a destructive action - prevents accidental deletion via GET/crawler.
+    """
+    album = get_object_or_404(Album, pk=album_id)
+    album.delete()
+    return redirect('albums:store_management')
