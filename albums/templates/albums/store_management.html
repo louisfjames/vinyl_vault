@@ -17,7 +17,7 @@
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Price</th>
-                <th>On Sale</th>
+                <th>Sale</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -35,7 +35,7 @@
                 <td>{% if album.is_on_sale %}Yes{% else %}No{% endif %}</td>
                 <td>
                     <div class="d-flex" style="gap: 0.5rem;">
-                        <a href="#" class="btn btn-sm custom-btn">Edit</a>
+                        <a href="{% url 'albums:edit_album' album.id %}" class="btn btn-sm custom-btn">Edit</a>
                         <button type="button" class="btn btn-sm remove-btn"
                             data-toggle="modal"
                             data-target="#deleteAlbumModal"

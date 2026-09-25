@@ -5,6 +5,7 @@ from datetime import date, timedelta
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.http import require_POST
+from .forms import AlbumForm
 
 
 def album_detail(request, album_id):
@@ -150,3 +151,27 @@ def delete_album(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
     album.delete()
     return redirect('albums:store_management')
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def edit_album(request, album_id):
+    """
+    Display a form pre-filled with an existing album's details and
+    save changes on submit. GET shows the form, POST validates and
+    saves it, redirecting back to store management on success.
+    """
+    album = get_object_or_404(Album, pk=album_id)
+
+    if request.method == 'POST':
+        form = AlbumForm(request.POST, instance=album)
+        if form.is_valid():
+            form.save()
+            return redirect('albums:store_management')
+    else:
+        form = AlbumForm(instance=album)
+
+    context = {
+        'form': form,
+        'album': album,
+    }
+    return render(request, 'albums/edit_album.html', context)
