@@ -125,7 +125,12 @@ def store_management(request):
     Display a register of all albums for the site admin to manage
     (add/edit/delete).
     """
-    albums = Album.objects.all().order_by('title')
+    albums_list = Album.objects.all().order_by('title')
+
+    paginator = Paginator(albums_list, 16)
+    page_number = request.GET.get('page')
+    albums = paginator.get_page(page_number)
+
     template = 'albums/store_management.html'
     context = {
         'albums': albums,

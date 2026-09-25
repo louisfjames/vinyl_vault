@@ -47,5 +47,39 @@
             {% endfor %}
         </tbody>
     </table>
+
+    {% if albums.has_other_pages %}
+    <nav aria-label="Album pagination">
+        <ul class="pagination justify-content-center">
+            {% if albums.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ albums.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            {% endif %}
+
+            {% for num in albums.paginator.page_range %}
+                {% if num == albums.number %}
+                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if albums.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ albums.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 {% endblock %}
