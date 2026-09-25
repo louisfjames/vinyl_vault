@@ -142,6 +142,28 @@ def store_management(request):
 
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
+def add_album(request):
+    """
+    Display a blank form for creating a new album and save it on
+    submit. GET shows the empty form, POST validates and saves it,
+    redirecting back to store management on success.
+    """
+    if request.method == 'POST':
+        form = AlbumForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('albums:store_management')
+    else:
+        form = AlbumForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'albums/add_album.html', context)
+
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
 @require_POST
 def delete_album(request, album_id):
     """
@@ -151,6 +173,7 @@ def delete_album(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
     album.delete()
     return redirect('albums:store_management')
+
 
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
