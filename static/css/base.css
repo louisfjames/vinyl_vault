@@ -200,6 +200,25 @@ input[name="quantity"].form-control:focus {
     border-color: var(--colour-dark) !important;
 }
 
+/* Messages */
+.alert {
+    border-radius: 0;
+    border: 2px solid #000;
+}
+
+.alert-success {
+    background-color: var(--colour-light);
+    color: var(--colour-dark);
+    border-color: var(--primary-accent);
+}
+
+.alert-error,
+.alert-danger {
+    background-color: var(--colour-light);
+    color: var(--colour-dark);
+    border-color: rgb(215, 0, 0);
+}
+
 /* ============ Album Detail Page ============ */
 
 .album-detail-cover {
