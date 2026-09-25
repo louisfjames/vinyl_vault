@@ -491,6 +491,14 @@ hr {
     object-fit: cover;
 }
 
+/* ============ Store Management Page ============ */
+
+.store-mgmt-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
 /* ============ Media Queries ============ */
 
 @media (max-width: 991px) {

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container page-container">
+    <h2 class="headings">Store Management</h2>
+    <hr class="divider">
+
+    <a href="#" class="btn custom-btn mb-3">
+        <i class="fas fa-plus mr-2"></i>Add Album
+    </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Price</th>
+                <th>On Sale</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for album in albums %}
+            <tr>
+                <td>
+                    {% if album.cover_image_url %}
+                    <img src="{{ album.cover_image_url }}" alt="{{ album.title }}" class="store-mgmt-thumb">
+                    {% endif %}
+                </td>
+                <td>{{ album.title }}</td>
+                <td>{{ album.artist }}</td>
+                <td>£{{ album.price }}</td>
+                <td>{% if album.is_on_sale %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <div class="d-flex" style="gap: 0.5rem;">
+                        <a href="#" class="btn btn-sm custom-btn">Edit</a>
+                        <a href="#" class="btn btn-sm custom-btn">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-muted">No albums in the database yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

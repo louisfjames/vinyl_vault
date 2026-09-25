@@ -9,4 +9,5 @@ urlpatterns = [
     path('sale/', views.sale_albums, name='sale_albums'),
     path('new-releases/', views.new_releases, name='new_releases'),
     path('search/', views.album_search, name='album_search'),
+    path('store-management/', views.store_management, name='store_management'),
 ]

@@ -3,6 +3,8 @@ from .models import Album
 from django.core.paginator import Paginator
 from datetime import date, timedelta
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 
 def album_detail(request, album_id):
     """
@@ -114,3 +116,18 @@ def album_search(request):
 
     context = {'page_obj': page_obj, 'query': query}
     return render(request, 'albums/search_results.html', context)
+
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def store_management(request):
+    """
+    Display a register of all albums for the site admin to manage
+    (add/edit/delete).
+    """
+    albums = Album.objects.all().order_by('title')
+    template = 'albums/store_management.html'
+    context = {
+        'albums': albums,
+    }
+    return render(request, template, context)
