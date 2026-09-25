@@ -50,12 +50,29 @@
                 <hr class="divider">
                 {% if orders %}
                 {% for order in orders %}
-                <div class="info-card-row">
-                    <span>
-                        {{ order.order_number|truncatechars:8 }}
-                        <span class="text-muted small ml-2">{{ order.date|date:"d M Y" }}</span>
-                    </span>
-                    <span>£{{ order.grand_total }}</span>
+                <div class="order-history-entry mb-4">
+                    <div class="info-card-row">
+                        <span>
+                            {{ order.order_number|truncatechars:8 }}
+                            <span class="text-muted small ml-2">{{ order.date|date:"d M Y" }}</span>
+                        </span>
+                        <span>£{{ order.grand_total }}</span>
+                    </div>
+
+                    {% for item in order.lineitems.all %}
+                    <div class="d-flex align-items-center py-2 border-top">
+                        {% if item.album.cover_image_url %}
+                        <img src="{{ item.album.cover_image_url }}"
+                             alt="{{ item.album.title }}"
+                             class="order-history-cover mr-3">
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <div class="font-weight-bold">{{ item.album.title }}</div>
+                            <div class="text-muted small">Quantity: {{ item.quantity }}</div>
+                        </div>
+                        <div class="font-weight-bold">£{{ item.lineitem_total }}</div>
+                    </div>
+                    {% endfor %}
                 </div>
                 {% endfor %}
                 {% else %}

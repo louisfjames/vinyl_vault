@@ -9,6 +9,7 @@ from bag.contexts import bag_contents
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from albums.models import Album
+from profiles.models import UserProfile
 
 import stripe
 
@@ -86,6 +87,11 @@ def payment(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             order.original_bag = json.dumps(bag)
+
+            if request.user.is_authenticated:
+                profile = UserProfile.objects.get(user=request.user)
+                order.user_profile = profile
+
             order.save()
             for item_id, quantity in bag.items():
                 try:

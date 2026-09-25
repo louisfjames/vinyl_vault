@@ -483,6 +483,14 @@ hr {
     padding-bottom: 3rem;
 }
 
+/* ============ Profile Page ============ */
+
+.order-history-cover {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
 /* ============ Media Queries ============ */
 
 @media (max-width: 991px) {
