@@ -21,11 +21,16 @@ def bag_contents(request):
             'price': price,
             'subtotal': subtotal,
         })
-    
+
+    delivery = settings.STANDARD_DELIVERY_COST
+    grand_total = total + delivery
+
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
+        'delivery': delivery,
+        'grand_total': grand_total,
     }
 
     return context
