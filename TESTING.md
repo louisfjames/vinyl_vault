@@ -6,11 +6,11 @@
 2. [Testing Timeline](#testing-timeline)
 3. [Manual Testing](#manual-testing)
 4. [Acceptance Criteria Testing](#acceptance-criteria-testing)
-5. [HTML Validator](#html-validator)
-6. [CSS Validator](#css-validator)
-7. [JavaScript Validator](#javascript-validator)
-8. [Python Linter](#python-linter)
-9. [Automated Testing via Django](#automated-testing-via-django)
+5. [Automated Testing via Django](#automated-testing-via-django)
+6. [HTML Validator](#html-validator)
+7. [CSS Validator](#css-validator)
+8. [JavaScript Validator](#javascript-validator)
+9. [Python Linter](#python-linter)
 10. [Google Chrome Lighthouse](#google-chrome-lighthouse)
 11. [Bug Fixes](#bug-fixes)
 
@@ -40,7 +40,7 @@ Iteration Breakdown:
 - **Iteration 4 – Profile, Admin & Polish**
     - Validated profile pages showing order history and saved delivery details.
     - Tested store management: add, edit, and delete albums via front end.
-    - Checked toast notifications and mobile responsiveness.
+    - Checked mobile responsiveness.
     - Refined layout, feedback, and accessibility across all devices.
 
 
@@ -54,7 +54,7 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Iteration 2 testing (manual testing + acceptance criteria checks) | 31st August 2026 |
 | Iteration 3 testing (manual testing + acceptance criteria checks) | 20th Sept 2026 |
 | Iteration 4 testing (manual testing + acceptance criteria checks) | 27th Sept 2026 |
-| Automated testing via Django | XX XX 2026|
+| Automated testing via Django | 27th Sept 2026|
 | Validator and linter checks (HTML, CSS, JS, Python) | XX XX 2026 |
 | Google lighthouse audit testing | XX XX 2026 |
 
@@ -245,6 +245,21 @@ This table outlines the key user stories and acceptance criteria completed durin
 | **US 4.3.1 – Toast Notifications (Could Have)** | Toast messages appear after key actions such as adding to bag or updating profile. | ⚠️ **CUT FOR TIME** | Feature deferred; Django messages framework planned but not implemented in this iteration. |
 | **US 4.3.1 – Toast Notifications (Could Have)** | Notifications follow consistent styling and disappear automatically. | ⚠️ **CUT FOR TIME** | Styling and triggers postponed; will be revisited in future enhancement cycle. |
 
+### Automated Testing via Django
+Automated testing checks code behaviour by running tests through a tool or script rather than by hand. Its key principles are repeatability, consistency, and early detection of errors. Automated tests run the same steps every time, which removes human error and makes it easier to spot issues when new features are added. They are useful for checking functions, input handling, and any part of the code that should always behave in the same way.
+
+Automated tests were run using [Django's test framework](https://docs.djangoproject.com/en/6.0/topics/testing/) via `python manage.py test`. These tests focused on areas of highest complexity and user-facing impact. Rather than targeting full coverage, tests were prioritised for the most critical logic: form validation in `checkout/forms.py` and `albums/forms.py`, and the views in `albums/views.py`, `bag/views.py`, and `checkout/views.py`, which handle browsing, pagination, bag session logic, form submission, and order creation. This approach ensures the core user journeys and business logic are verified, while remaining proportionate for a project of this scale.
+
+Before writing automated tests, initial setup was required. The `import sys` statement and a conditional database block were added to `settings.py` to ensure tests run against a local database rather than the production database, which improves speed and avoids any risk to live data. The default `tests.py` file in each app was removed and replaced with separate `test_views.py` files to keep tests organised by type. Each test file uses Django's `TestCase` class with a `setUp` method that creates a test user (and, where required, a superuser) and logs them in before each test runs, providing the authenticated context required by the project's account- and admin-restricted views.
+
+Automated testing was prioritised for the areas of highest risk and complexity rather than aiming for full coverage: the bag's session-based logic (`bag/test_views.py`), permission and access-control boundaries across album management (`albums/test_views.py`), and the core order-creation flow at checkout (`checkout/test_views.py`), since these are the parts of the site where a bug would have the most direct impact on a customer's ability to browse, buy, and pay safely.Can you 
+
+| App | File | Description | Status | Screenshot |
+|----|----|----|----|----|
+| bag | test_views.py | Seven automated tests were written for the `bag` app's session-based views, covering the bag page loading successfully, adding a new item to the bag, incrementing an existing item's quantity, updating an item to an exact quantity, removing an item when its quantity is set to zero, removing an item entirely, and gracefully handling an attempt to remove an item no longer in the bag. All seven tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/bag-automated-testing.png" alt="automated testing for views in bag app"> |
+| albums | test_views.py | | | |
+| checkout | test_views.py | | | |
+
 
 ### HTML Validator
 [HTML W3C Validator](https://validator.w3.org/) was used to validate all HTML files.
@@ -269,8 +284,6 @@ As part of the testing process, quality assurance checks were conducted across a
 - **Import organisation**: Imports are ordered consistently - standard library, Django, third-party, then local imports.
 - **Line length**: All lines adhere to the PEP 8 maximum of 79 characters.
 
-### Automated Testing via Django
-xxx
 
 ### Google Chrome Lighthouse
 xxx

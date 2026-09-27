@@ -13,6 +13,7 @@ import os
 import dj_database_url
 from pathlib import Path
 from decimal import Decimal
+import sys
 
 if os.path.isfile('env.py'):
     import env
@@ -191,3 +192,18 @@ STANDARD_DELIVERY_COST = Decimal('4.99')
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
+
+# Automated Testing
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
