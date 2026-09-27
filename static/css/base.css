@@ -10,11 +10,11 @@
     --font-body: "Inter", sans-serif;
 
     /* Core colours */
-    --colour-dark: rgb(27, 27, 33);
+    --colour-dark: #1b1b21;
     --colour-light: white;
 
     /* Accent colours */
-    --primary-accent: rgb(247, 91, 7);
+    --primary-accent: #AD0045;
     --background-accent: #f1f2f3;
 }
 
@@ -391,7 +391,7 @@ input[name="quantity"].form-control:focus {
 }
 
 .remove-btn:hover {
-    background-color: rgb(181, 46, 46);
+    background-color: #9E2929;
     border-color: rgb(215, 0, 0);
     color: var(--colour-light);
 }

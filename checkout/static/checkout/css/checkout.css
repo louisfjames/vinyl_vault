@@ -7,7 +7,7 @@
     --colour-light: white;
 
     /* Accent colours */
-    --primary-accent: rgb(247, 91, 7);
+    --primary-accent: #AD0045;
 }
 
 .checkout-container {
