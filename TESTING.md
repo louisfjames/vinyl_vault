@@ -53,11 +53,10 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Iteration 1 testing (manual testing + acceptance criteria checks) | 9th & 14th August 2026 |
 | Iteration 2 testing (manual testing + acceptance criteria checks) | 31st August 2026 |
 | Iteration 3 testing (manual testing + acceptance criteria checks) | 20th Sept 2026 |
-| Iteration 4 testing (manual testing + acceptance criteria checks) | XX XX 2026 |
+| Iteration 4 testing (manual testing + acceptance criteria checks) | 27th Sept 2026 |
 | Automated testing via Django | XX XX 2026|
-| Google lighthouse audit testing | XX XX 2026 |
 | Validator and linter checks (HTML, CSS, JS, Python) | XX XX 2026 |
-| Automated testing via Django | XX XX 2026|
+| Google lighthouse audit testing | XX XX 2026 |
 
 
 ### Manual Testing
@@ -147,11 +146,20 @@ Manual testing was carried out at the end of each iteration to confirm that newl
 | Performance | Payment processing speed | Payment completes within expected time | Tested multiple payments | Consistent quick processing | ✅ **PASS** |
 
 
+#### Iteration Four
 
-#### Iteration Four – xxx
-xxx
-
-
+| Area | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- | --- |
+| Profile | Order History | Displays all past orders for authenticated user | Logged in as test user; viewed profile orders list | All orders displayed correctly | ✅ **PASS** |
+| Profile | Order Details | Shows date, total, and items purchased | Checked multiple orders; verified totals and item counts | Details accurate and formatted correctly | ✅ **PASS** |
+| Profile | Delivery Details | Saved delivery info persists in profile | Entered address and phone; saved and reloaded profile | Data persisted correctly | ✅ **PASS** |
+| Checkout | Auto‑Populate Delivery | Saved delivery details pre‑fill checkout form | Logged in; opened checkout page | Fields auto‑filled with saved data | ✅ **PASS** |
+| Admin | Add New Album | Admin can add new product via front end | Logged in as admin; submitted new album form | Album added and visible in store | ✅ **PASS** |
+| Admin | Edit Album | Admin can edit product details | Edited price and description; saved changes | Updates reflected instantly | ✅ **PASS** |
+| Admin | Delete Album | Admin can delete product with confirmation | Clicked delete; confirmed prompt | Product removed from catalogue | ✅ **PASS** |
+| Layout | Mobile Responsiveness | Pages render correctly on all devices | Tested on Chrome DevTools (mobile/tablet/desktop) | Layout responsive; no overflow issues | ✅ **PASS** |
+| Layout | Navigation Usability | Navigation and forms remain usable at all screen sizes | Tested album grid and profile forms | All elements accessible and readable | ✅ **PASS** |
+| Feedback | Toast Notifications | Toast messages appear after key actions | Feature deferred for time constraints | Not implemented this iteration | ⚠️ **CUT FOR TIME** |
 
 
 
@@ -282,11 +290,11 @@ This section documents the issues found during development and how each one was 
   </thead>
   <tbody>
     <tr>
-      <td>(1) x</td>
-      <td>x</td>
+    <td>(1) Navbar Dropdown Clipping Issue</td>
+      <td>Dropdown menu in the navigation bar was being clipped by parent container, preventing full visibility of options.</td>
       <td>✅ PASS</td>
-      <td>Fix: x</td>
-      <td>x</td>
+      <td>Fix: Adjusted Bootstrap classes to ensure dropdown renders above all elements.</td>
+      <td>688f369</td>
     </tr>
   </tbody>
 </table>
