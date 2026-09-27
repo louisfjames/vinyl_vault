@@ -257,7 +257,7 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 | App | File | Description | Status | Screenshot |
 |----|----|----|----|----|
 | bag | test_views.py | Seven automated tests were written for the `bag` app's session-based views, covering the bag page loading successfully, adding a new item to the bag, incrementing an existing item's quantity, updating an item to an exact quantity, removing an item when its quantity is set to zero, removing an item entirely, and gracefully handling an attempt to remove an item no longer in the bag. All seven tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/bag-automated-testing.png" alt="automated testing for views in bag app"> |
-| albums | test_views.py | | | |
+| albums | test_views.py | Eight automated tests were written for the `albums` app's views, covering album detail 404 handling, valid album detail rendering, safe fallback on an invalid pagination page number, permission boundaries on the superuser-only Store Management views (rejecting both anonymous and logged-in non-superuser users across store management, add, edit, and delete), successful access and functionality for superusers, and method restriction on the delete view (rejecting a GET request). All eight tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/albums-automated-testing.png" alt="automated testing for views in albums app"> |
 | checkout | test_views.py | | | |
 
 
