@@ -219,20 +219,47 @@ This table outlines the key user stories and acceptance criteria completed durin
 
 
 #### Iteration Four
-xxx
+
+| User Story | Acceptance Criteria | Status | Evidence/Notes |
+|-------------|--------------------|--------|----------------|
+| **US 4.1.1 – View Order History (Must Have)** | Users can view a list of all past orders within their profile. | ✅ **PASS** | Profile page displays complete order history for authenticated users; verified multiple test accounts. |
+| **US 4.1.1 – View Order History (Must Have)** | Each order displays key details such as date, total, and items purchased. | ✅ **PASS** | Order cards show correct totals, item counts, and purchase dates; cross‑checked against database entries. |
+| **US 4.1.2 – Save Default Delivery Details (Must Have)** | Users can save delivery information in their profile for future checkouts. | ✅ **PASS** | Delivery fields persist correctly in profile model; verified data saved and retrieved accurately. |
+| **US 4.1.2 – Save Default Delivery Details (Must Have)** | Saved details auto‑populate the checkout form when logged in. | ✅ **PASS** | Logged‑in user checkout form pre‑fills with stored delivery data; confirmed across multiple browsers. |
+| **US 4.2.1 – Add New Albums (Admin Must Have)** | Store owners can access an add‑product form from the front end. | ✅ **PASS** | Admin‑only form accessible via front‑end route; non‑admin users correctly restricted. |
+| **US 4.2.1 – Add New Albums (Admin Must Have)** | New products are saved to the database and appear in the store immediately. | ✅ **PASS** | Added albums appear instantly in catalogue; verified database commit and front‑end refresh. |
+| **US 4.2.2 – Edit Album Details (Admin Must Have)** | Store owners can edit product fields such as name, price, description, and stock. | ✅ **PASS** | Edit form loads with pre‑filled data; updates reflect immediately after save. |
+| **US 4.2.2 – Edit Album Details (Admin Must Have)** | Changes update the product immediately and reflect across the site. | ✅ **PASS** | Updated album details visible on product page and search results; confirmed via live refresh. |
+| **US 4.2.3 – Delete Albums (Admin Must Have)** | Store owners can delete products from the front end with a confirmation step. | ✅ **PASS** | Confirmation modal appears; deletion removes product from catalogue; verified redirect behaviour. |
+| **US 4.2.3 – Delete Albums (Admin Must Have)** | Deleted products are removed from the catalogue and cannot be accessed. | ✅ **PASS** | Attempted direct URL access returns 404; product no longer retrievable from database. |
+| **US 4.3.2 – Mobile Responsiveness (Must Have)** | All pages render correctly on mobile, tablet, and desktop. | ✅ **PASS** | Tested on Chrome DevTools and physical devices; layout consistent and responsive. |
+| **US 4.3.2 – Mobile Responsiveness (Must Have)** | Navigation, product grids, and forms remain usable at all screen sizes. | ✅ **PASS** | Verified interactive elements scale correctly; no overflow or clipping issues detected. |
+| **US 4.3.1 – Toast Notifications (Could Have)** | Toast messages appear after key actions such as adding to bag or updating profile. | ⚠️ **CUT FOR TIME** | Feature deferred; Django messages framework planned but not implemented in this iteration. |
+| **US 4.3.1 – Toast Notifications (Could Have)** | Notifications follow consistent styling and disappear automatically. | ⚠️ **CUT FOR TIME** | Styling and triggers postponed; will be revisited in future enhancement cycle. |
 
 
 ### HTML Validator
-xxx
+[HTML W3C Validator](https://validator.w3.org/) was used to validate all HTML files.
+
+| Page | URL | Status | Screenshot | Validation Link | Notes |
+|------|-----|--------|------------|----------------|-------|
+| [Landing Page](link) | url | ✅ | screenshot | x | Notes |
+
 
 ### CSS Validator
-xx
+[CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files - no errors remain.
+
 
 ### JavaScript Validator
 xx
 
 ### Python Linter
-xxx
+All Python files validated using [PEP8 Code Institute Python Linter](https://pep8ci.herokuapp.com/) to ensure comprehensive code quality and PEP8 compliance.
+
+As part of the testing process, quality assurance checks were conducted across all project files, covering the following:
+- **Docstrings**: All views, functions, and modules include descriptive docstrings.
+- **Import organisation**: Imports are ordered consistently - standard library, Django, third-party, then local imports.
+- **Line length**: All lines adhere to the PEP 8 maximum of 79 characters.
 
 ### Automated Testing via Django
 xxx
@@ -241,6 +268,27 @@ xxx
 xxx
 
 ### Bug Fixes
-xxxx
+This section documents the issues found during development and how each one was resolved. It provides a clear record of problems and fixes highlighted during manual testing.
+
+<table>
+  <thead>
+    <tr>
+      <th>Bug Title</th>
+      <th>Bug Description</th>
+      <th>Fixed?</th>
+      <th>Fixed Description</th>
+      <th>GitHub Commit Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(1) x</td>
+      <td>x</td>
+      <td>✅ PASS</td>
+      <td>Fix: x</td>
+      <td>x</td>
+    </tr>
+  </tbody>
+</table>
 
 <sub>[*Back to contents*](#table-of-contents)</sup>
