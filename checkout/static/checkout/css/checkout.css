@@ -136,6 +136,13 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkout-actions .custom-btn {
+    width: 260px;
+    text-align: center;
 }
 
 /* Stripe Styling - provided by Stripe Documentation / Code Institute */
