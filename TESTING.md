@@ -258,7 +258,7 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 |----|----|----|----|----|
 | bag | test_views.py | Seven automated tests were written for the `bag` app's session-based views, covering the bag page loading successfully, adding a new item to the bag, incrementing an existing item's quantity, updating an item to an exact quantity, removing an item when its quantity is set to zero, removing an item entirely, and gracefully handling an attempt to remove an item no longer in the bag. All seven tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/bag-automated-testing.png" alt="automated testing for views in bag app"> |
 | albums | test_views.py | Eight automated tests were written for the `albums` app's views, covering album detail 404 handling, valid album detail rendering, safe fallback on an invalid pagination page number, permission boundaries on the superuser-only Store Management views (rejecting both anonymous and logged-in non-superuser users across store management, add, edit, and delete), successful access and functionality for superusers, and method restriction on the delete view (rejecting a GET request). All eight tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/albums-automated-testing.png" alt="automated testing for views in albums app"> |
-| checkout | test_views.py | | | |
+| checkout | test_views.py | Nine automated tests were written for the `checkout` app's views, covering redirect behaviour on an empty bag, correct form rendering and validation on the delivery details step, session handling between checkout and payment, order creation on successful payment (with Stripe's `PaymentIntent.create` mocked to avoid real network calls), session clearing after a successful order, and valid/invalid order number handling on the success page. All nine tests passed successfully. | ✅ - No errors found. | <img src="docs/testing/checkout-automated-testing.png" alt="automated testing for views in checkout app"> |
 
 
 ### HTML Validator
@@ -307,7 +307,13 @@ This section documents the issues found during development and how each one was 
       <td>Dropdown menu in the navigation bar was being clipped by parent container, preventing full visibility of options.</td>
       <td>✅ PASS</td>
       <td>Fix: Adjusted Bootstrap classes to ensure dropdown renders above all elements.</td>
-      <td>688f369</td>
+      <td>a href="https://github.com/louisfjames/vinyl_vault/commit/688f369eafe3fb6b68a38407328cee5f82ec4fe8">688f369</a></td>
+    </tr>
+    <td>(2) Custom 404 Handler Missing Import</td>
+      <td>The project's custom 404 view (<code>custom_404</code> in <code>vinyl_vault/urls.py</code>) called Django's <code>render()</code> function without it being imported, causing a <code>NameError</code> and breaking the 404 page whenever it was triggered. Surfaced by an automated test for the <code>albums</code> app checking 404 behaviour on an invalid album ID.</td>
+      <td>✅ PASS</td>
+      <td>Fix: Added the missing <code>from django.shortcuts import render</code> import to <code>vinyl_vault/urls.py</code>.</td>
+      <td><a href="https://github.com/louisfjames/vinyl_vault/commit/7aa3dab">7aa3dab</a></td>
     </tr>
   </tbody>
 </table>

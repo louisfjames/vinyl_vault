@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from albums.models import Album
 
 
-
 class AlbumsViewsTestCase(TestCase):
     """
     Tests for the albums app's views, focused on two areas: permission
