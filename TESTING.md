@@ -285,8 +285,12 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 
 
 ### CSS Validator
-[CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files - no errors remain.
+[CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files:
 
+- base.css file = no errors
+  - <img src="docs/testing/base-css-validator.png" alt="base css testing" width="300">
+- checkout.css file = no errors
+  - <img src="docs/testing/checkout-css-validator.png" alt="base css testing" width="300">
 
 ### JavaScript Validator
 xx
