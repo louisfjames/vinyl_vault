@@ -18,7 +18,7 @@
 
     <!-- Sort dropdown -->
     <form method="get" class="d-flex justify-content-end mb-3">
-        <select name="sort" class="form-select w-auto" onchange="this.form.submit()">
+        <select name="sort" class="form-select w-auto" aria-label="Sort albums" onchange="this.form.submit()">
             <option value="release_desc" {% if current_sort == 'release_desc' %}selected{% endif %}>Newest Releases</option>
             <option value="release_asc" {% if current_sort == 'release_asc' %}selected{% endif %}>Oldest Releases</option>
             <option value="az" {% if current_sort == 'az' %}selected{% endif %}>A–Z</option>
