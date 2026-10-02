@@ -12,14 +12,14 @@
         <div class="col-12 col-lg-7">
 
             <div class="text-center mb-4">
-                <h2 class="logo-font">Thank you for your order</h2>
+                <h1 class="logo-font">Thank you for your order</h1>
                 <hr class="section-divider">
                 <p class="text mb-0">A confirmation email will be sent to
                     <strong>{{ order.email }}</strong>.</p>
             </div>
 
             <div class="order-summary">
-                <h4 class="mb-3">Order Info</h4>
+                <h2 class="h4 mb-3">Order Info</h2>
                 <hr class="section-divider">
                 <div class="order-summary-row">
                     <span>Order Number:</span>
@@ -30,7 +30,7 @@
                     <span>{{ order.date }}</span>
                 </div>
 
-                <h4 class="mb-3 mt-4">Delivery Info</h4>
+                <h2 class="h4 mb-3 mt-4">Delivery Info</h2>
                 <hr class="section-divider">
                 <p class="mb-1">{{ order.full_name }}</p>
                 <p class="mb-1">{{ order.street_address1 }}</p>
@@ -41,7 +41,7 @@
                 <p class="mb-1">{{ order.country }}</p>
                 <p class="mb-0">{{ order.phone_number }}</p>
 
-                <h4 class="mb-3 mt-4">Items Purchased</h4>
+                <h2 class="h4 mb-3 mt-4">Items Purchased</h2>
                 <hr class="section-divider">
                 {% for item in order_items %}
                 <div class="order-summary-item">
@@ -59,7 +59,7 @@
                 </div>
                 {% endfor %}
 
-                <h4 class="mb-3 mt-4">Order Total</h4>
+                <h2 class="h4 mb-3 mt-4">Order Total</h2>
                 <hr class="section-divider">
                 <div class="order-summary-row">
                     <span>Order Total:</span>

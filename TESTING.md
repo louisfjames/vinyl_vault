@@ -274,10 +274,10 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 | [About Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/about/) | /about/ | ✅ | [About Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fabout%2F) | ad7df12 | Multiple fixes to aria labels and fix to heading element |
 | [Sign Up Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/signup/) | /accounts/signup/ | ✅ | [Sign Up Page Result](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/signup/) | n/a | No fixes required |
 | [Login Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/login/) | /accounts/login/ | ✅ | [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Faccounts%2Flogin%2F) | n/a | No fixes required |
-| [Bag Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/bag/) | /bag/ | ✅ | screenshot | x | Notes |
-| [Checkout Page](link) | url | ✅ | screenshot | x | Notes |
-| [Payment Page](link) | url | ✅ | screenshot | x | Notes |
-| [Order Confirmation Page](link) | url | ✅ | screenshot | x | Notes |
+| [Bag Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/bag/) | /bag/ | ✅ | [Bag Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fbag%2F) | eb7918f | Two fixes to heading elements |
+| [Checkout Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/checkout/) | /checkout/ | ✅ | [Checkout Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2F) | n/a | No fixes required |
+| [Payment Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/checkout/payment/) | /checkout/payment | ✅ | [Payment Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2Fpayment%2F) | n/a | No fixes required |
+| Order Confirmation Page | url | ✅ | Link not included as testing page uses personal information (inc. address) | x | Two fixes to heading elements |
 | [Profile Page](link) | url | ✅ | screenshot | x | Notes |
 | [Landing Page](link) | url | ✅ | screenshot | x | Notes |
 | [Store Management Page](link) | url | ✅ | screenshot | x | Notes |
