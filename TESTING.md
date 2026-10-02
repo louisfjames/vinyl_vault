@@ -43,6 +43,8 @@ Iteration Breakdown:
     - Checked mobile responsiveness.
     - Refined layout, feedback, and accessibility across all devices.
 
+When stripe payments have been tested during manual testing, the following card details were input: 
+**Stripe test card:** `4242 4242 4242 4242`, any future expiry date, any CVC, any postcode.
 
 ### Testing Timeline
 A consistent testing routine was maintained throughout development to ensure each iteration met its acceptance criteria and remained stable as new features were introduced. The timeline below outlines the key testing milestones completed during the project.
@@ -55,8 +57,9 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Iteration 3 testing (manual testing + acceptance criteria checks) | 20th Sept 2026 |
 | Iteration 4 testing (manual testing + acceptance criteria checks) | 27th Sept 2026 |
 | Automated testing via Django | 27th Sept 2026|
-| Validator and linter checks (HTML, CSS, JS, Python) | XX XX 2026 |
+| Validators (HTML, CSS, JS) | 2nd October 2026 |
 | Google lighthouse audit testing | XX XX 2026 |
+| Python Linter | X October 2026 |
 
 
 ### Manual Testing
