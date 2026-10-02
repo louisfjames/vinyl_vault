@@ -325,7 +325,7 @@ As part of the testing process, quality assurance checks were conducted across a
 | About Page | <img src="docs/testing/google-lighthouse-about-page.png" alt="google lighthouse audit for about page" width="300">| All results above 95. |
 | Sign Up Page | <img src="docs/testing/google-lighthouse-sign-up-page.png" alt="google lighthouse audit for sign up page" width="300">| All results above 95. |
 | Login Page | <img src="docs/testing/google-lighthouse-login-page.png" alt="google lighthouse audit for login page" width="300">| All results above 95. |
-| Bag Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Bag Page | <img src="docs/testing/google-lighthouse-bag-page.png" alt="google lighthouse audit for bag page" width="300">| All results above 92. |
 | Checkout Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
 | Payment Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
 | Profile Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
