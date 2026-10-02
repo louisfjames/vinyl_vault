@@ -284,7 +284,7 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 | [Profile Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/profile/) | /profile/ | ✅ | [Profile Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2Fcheckout_success%2F4C99AA8D844645F59426F462F52550DC) | n/a | No fixes required |
 | [Store Management Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/store-management/) | /albums/store-management/ | ✅ | [Store Management Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fstore-management%2F) | n/a | No fixes required |
 | [Add Album Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/add/) | /albums/add | ✅ | [Add Album Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fadd%2F) | n/a | No fixes required |
-| [Add Album Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/edit/20/) | /albums/edit/20 (or other album number) | ✅ | [Edit Album Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fedit%2F20%2F) | n/a | No fixes required |
+| [Edit Album Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/edit/20/) | /albums/edit/20 (or other album number) | ✅ | [Edit Album Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fedit%2F20%2F) | n/a | No fixes required |
 
 
 ### CSS Validator
@@ -322,12 +322,16 @@ As part of the testing process, quality assurance checks were conducted across a
 | New Releases Page | <img src="docs/testing/google-lighthouse-new-releases-page.png" alt="google lighthouse audit for new releases page" width="300">| No fixes required and explaination for performance score given in Landing and Browse Page notes. |
 | Sale Page | <img src="docs/testing/google-lighthouse-sale-page.png" alt="google lighthouse audit for sale page" width="300">| All results above 90. |
 | Contact Page | <img src="docs/testing/google-lighthouse-contact-page.png" alt="google lighthouse audit for contact page" width="300">| All results above 97. |
-| About Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Landing Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Landing Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Landing Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Landing Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Landing Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| About Page | <img src="docs/testing/google-lighthouse-about-page.png" alt="google lighthouse audit for about page" width="300">| All results above 95. |
+| Sign Up Page | <img src="docs/testing/google-lighthouse-sign-up-page.png" alt="google lighthouse audit for sign up page" width="300">| All results above 95. |
+| Login Page | <img src="docs/testing/google-lighthouse-login-page.png" alt="google lighthouse audit for login page" width="300">| All results above 95. |
+| Bag Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Checkout Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Payment Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Profile Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Store Management Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Add Album Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Edit Album Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
 
 
 ### Bug Fixes
@@ -349,7 +353,7 @@ This section documents the issues found during development and how each one was 
       <td>Dropdown menu in the navigation bar was being clipped by parent container, preventing full visibility of options.</td>
       <td>✅ PASS</td>
       <td>Fix: Adjusted Bootstrap classes to ensure dropdown renders above all elements.</td>
-      <td>a href="https://github.com/louisfjames/vinyl_vault/commit/688f369eafe3fb6b68a38407328cee5f82ec4fe8">688f369</a></td>
+      <td><a href="https://github.com/louisfjames/vinyl_vault/commit/688f369eafe3fb6b68a38407328cee5f82ec4fe8">688f369</a></td>
     </tr>
     <td>(2) Custom 404 Handler Missing Import</td>
       <td>The project's custom 404 view (<code>custom_404</code> in <code>vinyl_vault/urls.py</code>) called Django's <code>render()</code> function without it being imported, causing a <code>NameError</code> and breaking the 404 page whenever it was triggered. Surfaced by an automated test for the <code>albums</code> app checking 404 behaviour on an invalid album ID.</td>
