@@ -271,10 +271,10 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 | [New Releases Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/new-releases/) | /albums/new-releases/ | ✅ | [New Releases Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fnew-releases%2F) | 86554b4 | Fix made to ensur heading element had heading level of 1 |
 | [Sale Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/sale/) | /albums/sale/ | ✅ | [Sale Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fsale%2F) | 7bbf7d4 | Fix made to ensur heading element had heading level of 1 |
 | [Contact Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/contact/) | /contact/ | ✅ | [Contact Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcontact%2F) | 76dc6bd | Two fixes to heading elements |
-| [About Page](link) | url | ✅ | screenshot | x | Notes |
-| [Sign Up Page](link) | url | ✅ | screenshot | x | Notes |
-| [Login Page](link) | url | ✅ | screenshot | x | Notes |
-| [Bag Page](link) | url | ✅ | screenshot | x | Notes |
+| [About Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/about/) | /about/ | ✅ | [About Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fabout%2F) | ad7df12 | Multiple fixes to aria labels and fix to heading element |
+| [Sign Up Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/signup/) | /accounts/signup/ | ✅ | [Sign Up Page Result](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/signup/) | n/a | No fixes required |
+| [Login Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/accounts/login/) | /accounts/login/ | ✅ | [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Faccounts%2Flogin%2F) | n/a | No fixes required |
+| [Bag Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/bag/) | /bag/ | ✅ | screenshot | x | Notes |
 | [Checkout Page](link) | url | ✅ | screenshot | x | Notes |
 | [Payment Page](link) | url | ✅ | screenshot | x | Notes |
 | [Order Confirmation Page](link) | url | ✅ | screenshot | x | Notes |
