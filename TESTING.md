@@ -328,10 +328,10 @@ As part of the testing process, quality assurance checks were conducted across a
 | Bag Page | <img src="docs/testing/google-lighthouse-bag-page.png" alt="google lighthouse audit for bag page" width="300">| All results above 92. |
 | Checkout Page | <img src="docs/testing/google-lighthouse-checkout-page.png" alt="google lighthouse audit for checkout page" width="300">| On the checkout page, Lighthouse flagged two accessibility issues. The country dropdown had no associated label, so I added an aria-label="Country" to the field in forms.py, giving screen reader users a clear name for the control without changing the layout. I also fixed a colour contrast failure by darkening the font colour of the unit price and quantity text in the order summary, so it now meets the minimum contrast ratio against its background. |
 | Payment Page | <img src="docs/testing/google-lighthouse-payment-page.png" alt="google lighthouse audit for payments page" width="300">| All results above 91. |
-| Profile Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Store Management Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Add Album Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Edit Album Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Profile Page | <img src="docs/testing/google-lighthouse-profile-page.png" alt="google lighthouse audit for profile page" width="300">| On the profile page, Lighthouse flagged an unlabelled country dropdown, so I added an aria-label="Default country" to the default_country field in forms.py. This gives screen reader users a clear name for the control without changing the layout. I also fixed colour contrast failures by removing the Bootstrap text-muted classes from text across the page, so it now uses the default darker text colour and meets the minimum contrast ratio against its background, making the content easier to read for all users. As there are album covers on this page, there is a similar performance score to the Landing and Browse pages - see these notes for more info. |
+| Store Management Page | <img src="docs/testing/google-lighthouse-store-management-page.png" alt="google lighthouse audit for store management page" width="300">| Perfect scores apart from the performance score. The reason there is a lower performance score is due to album covers and is outlined in detail in the Landing Page notes. |
+| Add Album Page | <img src="docs/testing/google-lighthouse-add-album-page.png" alt="google lighthouse audit for add album page" width="300">| All results above 94. |
+| Edit Album Page | <img src="docs/testing/google-lighthouse-edit-album-page.png" alt="google lighthouse audit for edit album page" width="300">| None. |
 
 
 ### Bug Fixes
