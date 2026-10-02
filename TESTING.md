@@ -287,13 +287,20 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 ### CSS Validator
 [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files:
 
-- base.css file = no errors
-  - <img src="docs/testing/base-css-validator.png" alt="base css testing" width="300">
-- checkout.css file = no errors
-  - <img src="docs/testing/checkout-css-validator.png" alt="base css testing" width="300">
+| File | Status | CSS Screenshot | Notes |
+|-----|--------|--------------|-----|
+| base.css | ✅ | <img src="docs/testing/base-css-validator.png" alt="base css testing" width="300"> | No errors |
+| checkout.css | ✅ | <img src="docs/testing/checkout-css-validator.png" alt="checkout css testing" width="300"> | No errors | 
+
 
 ### JavaScript Validator
-xx
+[JSHint](https://jshint.com/) was used to validate all JS files - no errors found.
+
+| File | Status | JSHint Screenshot | Notes |
+|-----|--------|--------------|-----|
+| stripe_element.js | ✅ | <img src="docs/testing/stripe-js-testing.png" alt="stripe element js testing" width="300">  | No errors|
+| bag.js | ✅ | <img src="docs/testing/bag-js-testing.png" alt="bag js testing" width="300"> | No errors |
+
 
 ### Python Linter
 All Python files validated using [PEP8 Code Institute Python Linter](https://pep8ci.herokuapp.com/) to ensure comprehensive code quality and PEP8 compliance.
