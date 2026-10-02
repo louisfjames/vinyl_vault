@@ -268,8 +268,8 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 |------|-----|--------|------------|----------------|-------|
 | [Landing Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/) | / | ✅ | [Landing Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2F) | c3c75de and 379beb4 | Fixes to headings and aria labels made. |
 | [Browse Page](link) | /albums/ | ✅ | [Browse Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2F) | fd5a72 | Fix made to ensur heading element had heading level of 1 |
-| [New Releases Page](link) | /albums/new-releases/ | ✅ | screenshot | x | Fix made to ensur heading element had heading level of 1 |
-| [Sale Page](link) | url | ✅ | screenshot | x | Notes |
+| [New Releases Page](link) | /albums/new-releases/ | ✅ | [New Releases Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fnew-releases%2F) | 86554b4 | Fix made to ensur heading element had heading level of 1 |
+| [Sale Page](link) | /albums/sale/ | ✅ | [Sale Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fsale%2F) | x | Fix made to ensur heading element had heading level of 1 |
 | [Contact Page](link) | url | ✅ | screenshot | x | Notes |
 | [About Page](link) | url | ✅ | screenshot | x | Notes |
 | [Sign Up Page](link) | url | ✅ | screenshot | x | Notes |
