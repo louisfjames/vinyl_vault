@@ -326,8 +326,8 @@ As part of the testing process, quality assurance checks were conducted across a
 | Sign Up Page | <img src="docs/testing/google-lighthouse-sign-up-page.png" alt="google lighthouse audit for sign up page" width="300">| All results above 95. |
 | Login Page | <img src="docs/testing/google-lighthouse-login-page.png" alt="google lighthouse audit for login page" width="300">| All results above 95. |
 | Bag Page | <img src="docs/testing/google-lighthouse-bag-page.png" alt="google lighthouse audit for bag page" width="300">| All results above 92. |
-| Checkout Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
-| Payment Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
+| Checkout Page | <img src="docs/testing/google-lighthouse-checkout-page.png" alt="google lighthouse audit for checkout page" width="300">| On the checkout page, Lighthouse flagged two accessibility issues. The country dropdown had no associated label, so I added an aria-label="Country" to the field in forms.py, giving screen reader users a clear name for the control without changing the layout. I also fixed a colour contrast failure by darkening the font colour of the unit price and quantity text in the order summary, so it now meets the minimum contrast ratio against its background. |
+| Payment Page | <img src="docs/testing/google-lighthouse-payment-page.png" alt="google lighthouse audit for payments page" width="300">| All results above 91. |
 | Profile Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
 | Store Management Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |
 | Add Album Page | <img src="#" alt="google lighthouse audit for x page" width="300">| None. |

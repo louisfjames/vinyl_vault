@@ -12,7 +12,7 @@
             <div class="mb-4 text-center">
                 <h2 class="headings">{{ user.username }}'s Profile</h2>
                 <hr class="divider mx-auto" style="width: 200px;">
-                <p class="text-muted mb-0">
+                <p class="text mb-0">
                     Manage your default delivery information below... saving it
                     here means you won't have to re-enter it at checkout.
                 </p>
@@ -54,7 +54,7 @@
                     <div class="info-card-row">
                         <span>
                             {{ order.order_number|truncatechars:8 }}
-                            <span class="text-muted small ml-2">{{ order.date|date:"d M Y" }}</span>
+                            <span class="text small ml-2">{{ order.date|date:"d M Y" }}</span>
                         </span>
                         <span>£{{ order.grand_total }}</span>
                     </div>
@@ -68,7 +68,7 @@
                         {% endif %}
                         <div class="flex-grow-1">
                             <div class="font-weight-bold">{{ item.album.title }}</div>
-                            <div class="text-muted small">Quantity: {{ item.quantity }}</div>
+                            <div class="text small">Quantity: {{ item.quantity }}</div>
                         </div>
                         <div class="font-weight-bold">£{{ item.lineitem_total }}</div>
                     </div>
@@ -76,7 +76,7 @@
                 </div>
                 {% endfor %}
                 {% else %}
-                <p class="text-muted mb-0">You haven't placed any orders yet.</p>
+                <p class="text mb-0">You haven't placed any orders yet.</p>
                 {% endif %}
             </div>
         </div>
