@@ -58,7 +58,7 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Iteration 4 testing (manual testing + acceptance criteria checks) | 27th Sept 2026 |
 | Automated testing via Django | 27th Sept 2026|
 | Validators (HTML, CSS, JS) | 2nd October 2026 |
-| Google lighthouse audit testing | XX XX 2026 |
+| Google lighthouse audit testing | 2nd October 2026 |
 | Python Linter | X October 2026 |
 
 
@@ -315,7 +315,15 @@ As part of the testing process, quality assurance checks were conducted across a
 
 
 ### Google Chrome Lighthouse
-xxx
+| Page | Desktop Results| Notes |
+|------|---------------|------|
+| Landing Page | <img src="docs/testing/google-lighthouse-landing-page.png" alt="#" width="300">| Lighthouse testing on the deployed site scored 86 for Performance and 100 for Accessibility, Best Practices and SEO. To reach these results, I added aria-label attributes to icon-only buttons and links (search, account and bag), labelled the search input, and wrapped the page content in a main landmark to improve Accessibility. I added a meta description to the base template for SEO, and enabled HSTS with the proxy SSL header in settings.py so the site is served securely on Heroku, which improved Best Practices. For Performance, I added explicit width and height attributes to album images, which reduced Cumulative Layout Shift to 0, and applied loading="lazy" to below-the-fold images while keeping the top images eager to protect Largest Contentful Paint. The remaining Performance deduction is mainly caused by the album cover images, which are hosted by an external provider. Because the image sizes and formats available are limited, smaller or resized versions can't be served, so all the image optimisations within my control have been applied. Using an image CDN or hosting the images locally would allow resizing and is a possible future improvement. |
+| Landing Page | <img src="#" alt="#" width="300">| None. |
+| Landing Page | <img src="#" alt="#" width="300">| None. |
+| Landing Page | <img src="#" alt="#" width="300">| None. |
+| Landing Page | <img src="#" alt="#" width="300">| None. |
+| Landing Page | <img src="#" alt="#" width="300">| None. |
+
 
 ### Bug Fixes
 This section documents the issues found during development and how each one was resolved. It provides a clear record of problems and fixes highlighted during manual testing.

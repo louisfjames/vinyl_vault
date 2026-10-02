@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 # Security settings for production (HSTS)
 if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
