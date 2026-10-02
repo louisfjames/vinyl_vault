@@ -277,11 +277,11 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 | [Bag Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/bag/) | /bag/ | ✅ | [Bag Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fbag%2F) | eb7918f | Two fixes to heading elements |
 | [Checkout Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/checkout/) | /checkout/ | ✅ | [Checkout Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2F) | n/a | No fixes required |
 | [Payment Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/checkout/payment/) | /checkout/payment | ✅ | [Payment Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2Fpayment%2F) | n/a | No fixes required |
-| Order Confirmation Page | url | ✅ | Link not included as testing page uses personal information (inc. address) | x | Two fixes to heading elements |
-| [Profile Page](link) | url | ✅ | screenshot | x | Notes |
-| [Landing Page](link) | url | ✅ | screenshot | x | Notes |
-| [Store Management Page](link) | url | ✅ | screenshot | x | Notes |
-| [Add / Edit Album Page](link) | url | ✅ | screenshot | x | Notes |
+| Order Confirmation Page | /checkout/checkout_success/... | ✅ | Link not included as testing page uses personal information (inc. address) | db4b748 | Two fixes to heading elements |
+| [Profile Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/profile/) | /profile/ | ✅ | [Profile Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Fcheckout%2Fcheckout_success%2F4C99AA8D844645F59426F462F52550DC) | n/a | No fixes required |
+| [Store Management Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/store-management/) | /albums/store-management/ | ✅ | [Store Management Page Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fstore-management%2F) | n/a | No fixes required |
+| [Add Album Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/add/) | /albums/add | ✅ | [Add Album Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fadd%2F) | n/a | No fixes required |
+| [Add Album Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/albums/edit/20/) | /albums/edit/20 (or other album number) | ✅ | [Edit Album Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2Falbums%2Fedit%2F20%2F) | n/a | No fixes required |
 
 
 ### CSS Validator
