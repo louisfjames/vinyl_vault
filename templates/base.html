@@ -35,7 +35,7 @@
         <!-- Top section = Logo, search bar + mobile burger toggle, account/bag (desktop only) -->
         <div class="row header-dark pt-lg-2">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link"><h2 class="text-white mb-0">Vinyl Vault</h2></a>
+                <a href="{% url 'home' %}" class="nav-link"><span class="h2 text-white mb-0">Vinyl Vault</span></a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-flex align-items-center">
                 <form method="GET" action="{% url 'albums:album_search' %}" class="d-flex align-items-center border border-white bg-transparent flex-grow-1">
@@ -60,7 +60,7 @@
                             <div><i class="far fa-user-circle fa-lg navbar-icon"></i></div>
                         </div>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right border-0" aria-labelledby="user-options">
+                    <div class="dropdown-menu dropdown-menu-right border-0">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a href="{% url 'albums:store_management' %}" class="dropdown-item">Store Management</a>
