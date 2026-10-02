@@ -264,9 +264,24 @@ Automated testing was prioritised for the areas of highest risk and complexity r
 ### HTML Validator
 [HTML W3C Validator](https://validator.w3.org/) was used to validate all HTML files.
 
-| Page | URL | Status | Screenshot | Validation Link | Notes |
+| Page | URL | Status | Validation Link | Commits | Notes |
 |------|-----|--------|------------|----------------|-------|
+| [Landing Page](https://vinyl-vault-6eabcdfa03fc.herokuapp.com/) | / | ✅ | [Landing Page Result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvinyl-vault-6eabcdfa03fc.herokuapp.com%2F) | c3c75de and 379beb4 | Fixes to headings and aria labels made. |
+| [Browse Page](link) | url | ✅ | screenshot | x | Notes |
+| [New Releases Page](link) | url | ✅ | screenshot | x | Notes |
+| [Sale Page](link) | url | ✅ | screenshot | x | Notes |
+| [Contact Page](link) | url | ✅ | screenshot | x | Notes |
+| [About Page](link) | url | ✅ | screenshot | x | Notes |
+| [Sign Up Page](link) | url | ✅ | screenshot | x | Notes |
+| [Login Page](link) | url | ✅ | screenshot | x | Notes |
+| [Bag Page](link) | url | ✅ | screenshot | x | Notes |
+| [Checkout Page](link) | url | ✅ | screenshot | x | Notes |
+| [Payment Page](link) | url | ✅ | screenshot | x | Notes |
+| [Order Confirmation Page](link) | url | ✅ | screenshot | x | Notes |
+| [Profile Page](link) | url | ✅ | screenshot | x | Notes |
 | [Landing Page](link) | url | ✅ | screenshot | x | Notes |
+| [Store Management Page](link) | url | ✅ | screenshot | x | Notes |
+| [Add / Edit Album Page](link) | url | ✅ | screenshot | x | Notes |
 
 
 ### CSS Validator
