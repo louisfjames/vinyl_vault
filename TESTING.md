@@ -331,7 +331,7 @@ As part of the testing process, quality assurance checks were conducted across a
 | Profile Page | <img src="docs/testing/google-lighthouse-profile-page.png" alt="google lighthouse audit for profile page" width="300">| On the profile page, Lighthouse flagged an unlabelled country dropdown, so I added an aria-label="Default country" to the default_country field in forms.py. This gives screen reader users a clear name for the control without changing the layout. I also fixed colour contrast failures by removing the Bootstrap text-muted classes from text across the page, so it now uses the default darker text colour and meets the minimum contrast ratio against its background, making the content easier to read for all users. As there are album covers on this page, there is a similar performance score to the Landing and Browse pages - see these notes for more info. |
 | Store Management Page | <img src="docs/testing/google-lighthouse-store-management-page.png" alt="google lighthouse audit for store management page" width="300">| Perfect scores apart from the performance score. The reason there is a lower performance score is due to album covers and is outlined in detail in the Landing Page notes. |
 | Add Album Page | <img src="docs/testing/google-lighthouse-add-album-page.png" alt="google lighthouse audit for add album page" width="300">| All results above 94. |
-| Edit Album Page | <img src="docs/testing/google-lighthouse-edit-album-page.png" alt="google lighthouse audit for edit album page" width="300">| None. |
+| Edit Album Page | <img src="docs/testing/google-lighthouse-edit-album-page.png" alt="google lighthouse audit for edit album page" width="300">| All results above 94. |
 
 
 ### Bug Fixes

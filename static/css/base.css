@@ -83,6 +83,11 @@ body {
     text-align: center;
 }
 
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
 /* Album cards */
 .album-card {
     background-color: var(--background-accent);
