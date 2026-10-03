@@ -13,6 +13,7 @@
 9. [Python Linter](#python-linter)
 10. [Google Chrome Lighthouse](#google-chrome-lighthouse)
 11. [Bug Fixes](#bug-fixes)
+12. [Console Issue Fixes](#console-issue-fixes)
 
 ### Testing Approach
 Test‑driven development principles were applied throughout the project, with core behaviours and expected outcomes defined before implementation. Writing tests early helped shape clearer, more reliable features, reduced regressions across iterations, and ensured that each new slice of functionality aligned with user needs and the project’s themes and stories.
@@ -365,3 +366,8 @@ This section documents the issues found during development and how each one was 
 </table>
 
 <sub>[*Back to contents*](#table-of-contents)</sup>
+
+
+### Console Issue Fixes
+
+INSERT PARAGRAPH OR TABLE
