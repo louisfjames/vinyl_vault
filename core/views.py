@@ -11,10 +11,10 @@ def index(request):
     album_data = Album.objects.all().order_by('-release_date')
 
     context = {
-           'latest_releases': album_data[:4],
-           'featured_album': album_data.filter(is_featured=True).first(),
-           'sale_items': album_data.filter(is_on_sale=True)[:4],
-       }
+        'latest_releases': album_data[:4],
+        'featured_album': album_data.filter(is_featured=True).first(),
+        'sale_items': album_data.filter(is_on_sale=True)[:4],
+    }
     return render(request, 'core/index.html', context)
 
 
@@ -35,15 +35,26 @@ def contact(request):
 
             send_mail(
                 subject=f'New contact form message from {name}',
-                message=f'From: {name} ({email})\nPhone: {phone_number}\n\n{message}',
+                message=(
+                    f'From: {name} ({email})\n'
+                    f'Phone: {phone_number}\n\n'
+                    f'{message}'
+                ),
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=['louisfredjames@gmail.com'],
             )
 
-            messages.success(request, "Thanks for getting in touch — we'll reply soon.")
+            messages.success(
+                request,
+                "Thanks for getting in touch — we'll reply soon."
+            )
             return redirect('contact')
         else:
-            messages.error(request, 'There was an error with your form. Please double check your information.')
+            messages.error(
+                request,
+                'There was an error with your form. '
+                'Please double check your information.'
+            )
     else:
         contact_form = ContactForm()
 

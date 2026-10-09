@@ -322,7 +322,7 @@ As part of the testing process, quality assurance checks were conducted across a
 | albums | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/forms.py) | ✅ | None. |
 | albums | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/models.py) | ✅ | Fixed - lines too long and trailing whitespace (see cdb71dc). |
 | albums | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/test_views.py) | ✅ | Fixed - line too long (see cdb71dc). |
-| albums | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/urls.py) | ✅ | |
+| albums | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/urls.py) | ✅ | None. |
 | albums | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/views.py) | ✅ | Fixed - line too long and trailing whitespace (see cdb71dc). |
 | bag | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/apps.py) | ✅ | None. |
 | bag | contexts.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/contexts.py) | ✅ | Fixed - E302 expected 2 blank lines, found 1. |
@@ -337,13 +337,10 @@ As part of the testing process, quality assurance checks were conducted across a
 | checkout | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/test_views.py) | ✅ | Fixed - multiple lines too long. |
 | checkout | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/urls.py) | ✅ | Fixed - line length. |
 | checkout | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/views.py) | ✅ | Fixed - multiple lines too long. |
-| core | admin.py | [Pep8 CI Link](LINK) | | |
-| core | apps.py | [Pep8 CI Link](LINK) | | |
-| core | forms.py | [Pep8 CI Link](LINK) | | |
-| core | models.py | [Pep8 CI Link](LINK) | | |
-| core | tests.py | [Pep8 CI Link](LINK) | | |
-| core | urls.py | [Pep8 CI Link](LINK) | | |
-| core | views.py | [Pep8 CI Link](LINK) | | |
+| core | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/apps.py) | ✅ | None. |
+| core | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/forms.py) | ✅ | Fixed - two line lengths. |
+| core | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/urls.py) | ✅ | None. |
+| core | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/views.py) | ✅ | Fixed - multiple lines too long. |
 | profiles | admin.py | [Pep8 CI Link](LINK) | | |
 | profiles | apps.py | [Pep8 CI Link](LINK) | | |
 | profiles | forms.py | [Pep8 CI Link](LINK) | | |
