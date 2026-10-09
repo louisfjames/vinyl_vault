@@ -329,14 +329,14 @@ As part of the testing process, quality assurance checks were conducted across a
 | bag | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/test_views.py) | ✅ | Fixed - whitespace at end of file. |
 | bag | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/urls.py) | ✅ | None. |
 | bag | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/views.py) | ✅ | Fixed - E302 expected 2 blank lines, found 1, and line length. |
-| checkout | admin.py | [Pep8 CI Link](LINK) | | |
-| checkout | apps.py | [Pep8 CI Link](LINK) | | |
-| checkout | forms.py | [Pep8 CI Link](LINK) | | |
-| checkout | models.py | [Pep8 CI Link](LINK) | | |
-| checkout | signals.py | [Pep8 CI Link](LINK) | | |
-| checkout | test_views.py | [Pep8 CI Link](LINK) | | |
-| checkout | urls.py | [Pep8 CI Link](LINK) | | |
-| checkout | views.py | [Pep8 CI Link](LINK) | | |
+| checkout | admin.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/admin.py) | ✅ | None. |
+| checkout | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/apps.py) | ✅ | None. |
+| checkout | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/forms.py) | ✅ | Fixed - no newline at end of file. |
+| checkout | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/models.py) | ✅ | Fixed - multiple lines too long. |
+| checkout | signals.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/signals.py) | ✅ | Fixed - no newline at end of file. |
+| checkout | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/test_views.py) | ✅ | Fixed - multiple lines too long. |
+| checkout | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/urls.py) | ✅ | Fixed - line length. |
+| checkout | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/checkout/views.py) | ✅ | Fixed - multiple lines too long. |
 | core | admin.py | [Pep8 CI Link](LINK) | | |
 | core | apps.py | [Pep8 CI Link](LINK) | | |
 | core | forms.py | [Pep8 CI Link](LINK) | | |

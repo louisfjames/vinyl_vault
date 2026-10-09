@@ -74,7 +74,9 @@ class CheckoutViewsTestCase(TestCase):
 
     @patch('checkout.views.stripe.PaymentIntent.create')
     def test_payment_get_loads_with_mocked_stripe_intent(self, mock_create):
-        mock_create.return_value = MagicMock(client_secret='test_client_secret')
+        mock_create.return_value = MagicMock(
+            client_secret='test_client_secret'
+        )
 
         self._add_album_to_session_bag()
         session = self.client.session
@@ -87,7 +89,9 @@ class CheckoutViewsTestCase(TestCase):
 
     @patch('checkout.views.stripe.PaymentIntent.create')
     def test_payment_post_valid_creates_order_and_redirects(self, mock_create):
-        mock_create.return_value = MagicMock(client_secret='test_client_secret')
+        mock_create.return_value = MagicMock(
+            client_secret='test_client_secret'
+        )
 
         self._add_album_to_session_bag()
         session = self.client.session
@@ -108,7 +112,9 @@ class CheckoutViewsTestCase(TestCase):
 
     @patch('checkout.views.stripe.PaymentIntent.create')
     def test_checkout_success_loads_for_valid_order(self, mock_create):
-        mock_create.return_value = MagicMock(client_secret='test_client_secret')
+        mock_create.return_value = MagicMock(
+            client_secret='test_client_secret'
+        )
 
         self._add_album_to_session_bag()
         session = self.client.session

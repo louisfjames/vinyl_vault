@@ -36,14 +36,21 @@ def checkout(request):
             request.session['checkout_data'] = order_form.cleaned_data
             return redirect(reverse('payment'))
         else:
-            messages.error(request, 'There was an error with your form. '
-                                     'Please double check your information.')
+            messages.error(
+                request,
+                'There was an error with your form. '
+                'Please double check your information.'
+            )
     else:
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
+                full_name = (
+                    request.user.get_full_name()
+                    or request.user.username
+                )
                 order_form = OrderForm(initial={
-                    'full_name': request.user.get_full_name() or request.user.username,
+                    'full_name': full_name,
                     'email': request.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
@@ -145,10 +152,15 @@ def payment(request):
             del request.session['checkout_data']
             if 'bag' in request.session:
                 del request.session['bag']
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+            )
         else:
-            messages.error(request, 'There was an error placing your order. '
-                                     'Please try again.')
+            messages.error(
+                request,
+                'There was an error placing your order. '
+                'Please try again.'
+            )
             return redirect(reverse('checkout'))
 
     current_bag = bag_contents(request)
