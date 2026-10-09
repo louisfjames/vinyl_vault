@@ -341,14 +341,13 @@ As part of the testing process, quality assurance checks were conducted across a
 | core | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/forms.py) | ✅ | Fixed - two line lengths. |
 | core | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/urls.py) | ✅ | None. |
 | core | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/core/views.py) | ✅ | Fixed - multiple lines too long. |
-| profiles | admin.py | [Pep8 CI Link](LINK) | | |
-| profiles | apps.py | [Pep8 CI Link](LINK) | | |
-| profiles | forms.py | [Pep8 CI Link](LINK) | | |
-| profiles | models.py | [Pep8 CI Link](LINK) | | |
-| profiles | tests.py | [Pep8 CI Link](LINK) | | |
-| profiles | urls.py | [Pep8 CI Link](LINK) | | |
-| profiles | views.py | [Pep8 CI Link](LINK) | | |
-| vinyl_vault | asgi.py | [Pep8 CI Link](LINK) | | |
+| profiles | admin.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/admin.py) | ✅ | None. |
+| profiles | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/apps.py) | ✅ | None. |
+| profiles | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/forms.py) | ✅ | Fixed - line length. |
+| profiles | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/models.py) | ✅ | Fixed - line length. |
+| profiles | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/urls.py) | ✅ | None. |
+| profiles | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/views.py) | ✅ | Fixed - line length. |
+| vinyl_vault | asgi.py | [Pep8 CI Link](LINK) | ✅ | |
 | vinyl_vault | settings.py | [Pep8 CI Link](LINK) | | |
 | vinyl_vault | urls.py | [Pep8 CI Link](LINK) | | |
 | vinyl_vault | wsgi.py | [Pep8 CI Link](LINK) | | |

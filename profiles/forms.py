@@ -41,4 +41,6 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0'
             self.fields[field].label = False
 
-        self.fields['default_country'].widget.attrs['aria-label'] = 'Default country'
+        self.fields['default_country'].widget.attrs['aria-label'] = (
+            'Default country'
+        )
