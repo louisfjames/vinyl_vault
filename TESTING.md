@@ -315,6 +315,49 @@ As part of the testing process, quality assurance checks were conducted across a
 - **Line length**: All lines adhere to the PEP 8 maximum of 79 characters.
 
 
+| App | File | URL | Status | Notes |
+|----|----|----|----|----|
+| albums | admin.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/admin.py) | ✅ | Fixed - no newline at end of file. |
+| albums | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/apps.py) | ✅ | None. |
+| albums | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/forms.py) | ✅ | None. |
+| albums | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/models.py) | ✅ | Fixed - lines too long and trailing whitespace. |
+| albums | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/test_views.py) | ✅ | Fixed - line too long. |
+| albums | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/urls.py) | ✅ | |
+| albums | views.py | [Pep8 CI Link](LINK) | ✅ | |
+| bag | admin.py | [Pep8 CI Link](LINK) | | |
+| bag | apps.py | [Pep8 CI Link](LINK) | | |
+| bag | contexts.py | [Pep8 CI Link](LINK) | | |
+| bag | models.py | [Pep8 CI Link](LINK) | | |
+| bag | test_views.py | [Pep8 CI Link](LINK) | | |
+| bag | urls.py | [Pep8 CI Link](LINK) | | |
+| bag | views.py | [Pep8 CI Link](LINK) | | |
+| checkout | admin.py | [Pep8 CI Link](LINK) | | |
+| checkout | apps.py | [Pep8 CI Link](LINK) | | |
+| checkout | forms.py | [Pep8 CI Link](LINK) | | |
+| checkout | models.py | [Pep8 CI Link](LINK) | | |
+| checkout | signals.py | [Pep8 CI Link](LINK) | | |
+| checkout | test_views.py | [Pep8 CI Link](LINK) | | |
+| checkout | urls.py | [Pep8 CI Link](LINK) | | |
+| checkout | views.py | [Pep8 CI Link](LINK) | | |
+| core | admin.py | [Pep8 CI Link](LINK) | | |
+| core | apps.py | [Pep8 CI Link](LINK) | | |
+| core | forms.py | [Pep8 CI Link](LINK) | | |
+| core | models.py | [Pep8 CI Link](LINK) | | |
+| core | tests.py | [Pep8 CI Link](LINK) | | |
+| core | urls.py | [Pep8 CI Link](LINK) | | |
+| core | views.py | [Pep8 CI Link](LINK) | | |
+| profiles | admin.py | [Pep8 CI Link](LINK) | | |
+| profiles | apps.py | [Pep8 CI Link](LINK) | | |
+| profiles | forms.py | [Pep8 CI Link](LINK) | | |
+| profiles | models.py | [Pep8 CI Link](LINK) | | |
+| profiles | tests.py | [Pep8 CI Link](LINK) | | |
+| profiles | urls.py | [Pep8 CI Link](LINK) | | |
+| profiles | views.py | [Pep8 CI Link](LINK) | | |
+| vinyl_vault | asgi.py | [Pep8 CI Link](LINK) | | |
+| vinyl_vault | settings.py | [Pep8 CI Link](LINK) | | |
+| vinyl_vault | urls.py | [Pep8 CI Link](LINK) | | |
+| vinyl_vault | wsgi.py | [Pep8 CI Link](LINK) | | |
+
 ### Google Chrome Lighthouse
 | Page | Desktop Results| Notes |
 |------|---------------|------|

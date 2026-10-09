@@ -33,7 +33,7 @@ def browse_albums(request):
     """
     Display a paginated grid of all albums (16 per page, 4x4 grid),
     sortable by release date, title (A-Z), or price.
-    Uses get_page() so an invalid/missing 'page' query param falls 
+    Uses get_page() so an invalid/missing 'page' query param falls
     back instead of erroring.
     """
     sort = request.GET.get('sort', 'release_desc')
@@ -44,7 +44,9 @@ def browse_albums(request):
         'price_low': 'price',
         'price_high': '-price',
     }
-    album_list = Album.objects.all().order_by(sort_options.get(sort, '-release_date'))
+    album_list = Album.objects.all().order_by(
+        sort_options.get(sort, '-release_date')
+    )
 
     paginator = Paginator(album_list, 16)
     page_number = request.GET.get('page')
@@ -101,10 +103,10 @@ def album_search(request):
     Render a paginated grid of albums matching a search query.
 
     Retrieves the 'q' parameter from the request and filters Album
-    records by title or artist using a case‑insensitive containment 
-    match. The filtered queryset is ordered alphabetically and 
-    paginated into 16‑item pages to maintain the same 4×4 layout 
-    used on the main browse view. Uses get_page() to safely handle 
+    records by title or artist using a case‑insensitive containment
+    match. The filtered queryset is ordered alphabetically and
+    paginated into 16‑item pages to maintain the same 4×4 layout
+    used on the main browse view. Uses get_page() to safely handle
     invalid or missing 'page' parameters.
     """
     query = request.GET.get('q', '')

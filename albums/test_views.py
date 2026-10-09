@@ -40,7 +40,9 @@ class AlbumsViewsTestCase(TestCase):
         self.assertContains(response, 'Test Album')
 
     def test_browse_albums_falls_back_on_invalid_page_number(self):
-        response = self.client.get(reverse('albums:browse_albums'), {'page': 'not-a-number'})
+        response = self.client.get(
+            reverse('albums:browse_albums'), {'page': 'not-a-number'}
+        )
         self.assertEqual(response.status_code, 200)
 
     # --- Store Management: permission boundaries ---
