@@ -60,7 +60,7 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Automated testing via Django | 27th Sept 2026|
 | Validators (HTML, CSS, JS) | 2nd October 2026 |
 | Google lighthouse audit testing | 2nd October 2026 |
-| Python Linter | X October 2026 |
+| Python Linter | 9th October 2026 |
 
 
 ### Manual Testing
@@ -347,10 +347,10 @@ As part of the testing process, quality assurance checks were conducted across a
 | profiles | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/models.py) | ✅ | Fixed - line length. |
 | profiles | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/urls.py) | ✅ | None. |
 | profiles | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/profiles/views.py) | ✅ | Fixed - line length. |
-| vinyl_vault | asgi.py | [Pep8 CI Link](LINK) | ✅ | |
-| vinyl_vault | settings.py | [Pep8 CI Link](LINK) | | |
-| vinyl_vault | urls.py | [Pep8 CI Link](LINK) | | |
-| vinyl_vault | wsgi.py | [Pep8 CI Link](LINK) | | |
+| vinyl_vault | asgi.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/vinyl_vault/asgi.py) | ✅ | None. |
+| vinyl_vault | settings.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/vinyl_vault/settings.py) | ✅ | Fixed - multiple line lengths. |
+| vinyl_vault | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/vinyl_vault/urls.py) | ✅ | Fixed - line breaks needed. |
+| vinyl_vault | wsgi.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/vinyl_vault/wsgi.py) | ✅ | None. |
 
 ### Google Chrome Lighthouse
 | Page | Desktop Results| Notes |

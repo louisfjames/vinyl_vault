@@ -29,7 +29,9 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
 ]
 
+
 def custom_404(request, exception=None):
     return render(request, '404.html', status=404)
+
 
 handler404 = 'vinyl_vault.urls.custom_404'
