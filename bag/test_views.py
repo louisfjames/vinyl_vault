@@ -92,4 +92,3 @@ class BagViewsTestCase(TestCase):
             reverse('bag:remove_from_bag', args=[self.album.id])
         )
         self.assertEqual(response.status_code, 302)
-    

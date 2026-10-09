@@ -317,20 +317,18 @@ As part of the testing process, quality assurance checks were conducted across a
 
 | App | File | URL | Status | Notes |
 |----|----|----|----|----|
-| albums | admin.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/admin.py) | ✅ | Fixed - no newline at end of file. |
+| albums | admin.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/admin.py) | ✅ | Fixed - no newline at end of file (see cdb71dc). |
 | albums | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/apps.py) | ✅ | None. |
 | albums | forms.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/forms.py) | ✅ | None. |
-| albums | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/models.py) | ✅ | Fixed - lines too long and trailing whitespace. |
-| albums | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/test_views.py) | ✅ | Fixed - line too long. |
+| albums | models.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/models.py) | ✅ | Fixed - lines too long and trailing whitespace (see cdb71dc). |
+| albums | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/test_views.py) | ✅ | Fixed - line too long (see cdb71dc). |
 | albums | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/urls.py) | ✅ | |
-| albums | views.py | [Pep8 CI Link](LINK) | ✅ | |
-| bag | admin.py | [Pep8 CI Link](LINK) | | |
-| bag | apps.py | [Pep8 CI Link](LINK) | | |
-| bag | contexts.py | [Pep8 CI Link](LINK) | | |
-| bag | models.py | [Pep8 CI Link](LINK) | | |
-| bag | test_views.py | [Pep8 CI Link](LINK) | | |
-| bag | urls.py | [Pep8 CI Link](LINK) | | |
-| bag | views.py | [Pep8 CI Link](LINK) | | |
+| albums | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/albums/views.py) | ✅ | Fixed - line too long and trailing whitespace (see cdb71dc). |
+| bag | apps.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/apps.py) | ✅ | None. |
+| bag | contexts.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/contexts.py) | ✅ | Fixed - E302 expected 2 blank lines, found 1. |
+| bag | test_views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/test_views.py) | ✅ | Fixed - whitespace at end of file. |
+| bag | urls.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/urls.py) | ✅ | None. |
+| bag | views.py | [Pep8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/louisfjames/vinyl_vault/refs/heads/main/bag/views.py) | ✅ | Fixed - E302 expected 2 blank lines, found 1, and line length. |
 | checkout | admin.py | [Pep8 CI Link](LINK) | | |
 | checkout | apps.py | [Pep8 CI Link](LINK) | | |
 | checkout | forms.py | [Pep8 CI Link](LINK) | | |

@@ -4,6 +4,7 @@ from albums.models import Album
 
 # Create your views here.
 
+
 def view_bag(request):
     """ A view to renders the bag contents page """
     return render(request, 'bag/bag.html')
@@ -51,7 +52,9 @@ def update_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated {album.title} quantity to {quantity}')
+        messages.success(
+            request, f'Updated {album.title} quantity to {quantity}'
+        )
     else:
         bag.pop(item_id, None)
         messages.success(request, f'Removed {album.title} from your bag')
