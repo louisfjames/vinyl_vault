@@ -61,6 +61,7 @@ A consistent testing routine was maintained throughout development to ensure eac
 | Validators (HTML, CSS, JS) | 2nd October 2026 |
 | Google lighthouse audit testing | 2nd October 2026 |
 | Python Linter | 9th October 2026 |
+| Browser console checks | 11th October 2026 |
 
 
 ### Manual Testing
